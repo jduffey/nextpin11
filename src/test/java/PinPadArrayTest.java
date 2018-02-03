@@ -20,4 +20,12 @@ public class PinPadArrayTest {
         PinPadArray pinPadArray = new PinPadArray(5);
         Assert.assertEquals(25, pinPadArray.getArraySizeOfPinPad());
     }
+
+    @Test
+    public void pinArrayShouldContainEachNumberFromZeroToTheSizeOfTheArrayMinusOne() {
+        PinPadArray pinPadArray = new PinPadArray(3);
+        for (int counter = 0; counter < pinPadArray.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals(true, pinPadArray.containsThisNumber(counter));
+        }
+    }
 }

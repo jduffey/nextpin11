@@ -6,7 +6,7 @@ public class PinPadArray {
 
     public PinPadArray(int sizeOfArraySquare) {
         for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
-            theArrayItself.add(1);
+            theArrayItself.add(counter);
         }
     }
 
@@ -14,4 +14,7 @@ public class PinPadArray {
         return theArrayItself.size();
     }
 
+    public boolean containsThisNumber(int numberWeAreCheckingToSeeExistsInTheArray) {
+        return theArrayItself.contains(numberWeAreCheckingToSeeExistsInTheArray);
+    }
 }
