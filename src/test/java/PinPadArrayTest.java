@@ -12,7 +12,12 @@ public class PinPadArrayTest {
     @Test
     public void pinArrayShouldHaveNumberOfElementsEqualToTheSquareOfTheSize() {
         PinPadArray pinPadArray = new PinPadArray(3);
-        Assert.assertEquals(9, pinPadArray.getNumberOfElementsInThisArray());
+        Assert.assertEquals(9, pinPadArray.getArraySizeOfPinPad());
     }
 
+    @Test
+    public void pinArrayShouldTakeDifferentSquareSizeAsArgument() {
+        PinPadArray pinPadArray = new PinPadArray(5);
+        Assert.assertEquals(25, pinPadArray.getArraySizeOfPinPad());
+    }
 }
