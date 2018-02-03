@@ -2,6 +2,7 @@ public class Customer {
 
     private int secretNumber;
     private int directionNumber;
+    private int squareSize;
 
     public void setSecretNumber(int secretNumber){
         this.secretNumber = secretNumber;
@@ -17,5 +18,13 @@ public class Customer {
 
     public int getDirectionNumber(){
         return directionNumber;
+    }
+
+    public void setSquareSize(int squareSize) {
+        this.squareSize = squareSize;
+    }
+
+    public int getSquareSize() {
+        return squareSize;
     }
 }

@@ -17,4 +17,11 @@ public class CustomerTest {
         Assert.assertEquals(5,customer.getDirectionNumber());
     }
 
+    @Test
+    public void shouldSetAndGetSquareSize(){
+        Customer customer = new Customer();
+        customer.setSquareSize(3);
+        Assert.assertEquals(3,customer.getSquareSize());
+    }
+
 }
