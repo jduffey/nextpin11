@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PinPadArray {
 
@@ -8,6 +9,7 @@ public class PinPadArray {
         for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
             theArrayItself.add(counter);
         }
+        Collections.shuffle(theArrayItself);
     }
 
     public int getArraySizeOfPinPad() {
@@ -16,5 +18,9 @@ public class PinPadArray {
 
     public boolean containsThisNumber(int numberWeAreCheckingToSeeExistsInTheArray) {
         return theArrayItself.contains(numberWeAreCheckingToSeeExistsInTheArray);
+    }
+
+    public Object getElement(int theElementToGet) {
+        return theArrayItself.get(theElementToGet);
     }
 }

@@ -28,4 +28,20 @@ public class PinPadArrayTest {
             Assert.assertEquals(true, pinPadArray.containsThisNumber(counter));
         }
     }
+
+    @Test
+    public void pinArrayShouldShuffleSuchThatTwoArraysOfSameSizeDoNotHaveTheSameArrangement() {
+        PinPadArray pinPadArrayFirst = new PinPadArray(3);
+        PinPadArray pinPadArraySecond = new PinPadArray(3);
+        Assert.assertTrue(pinPadArrayFirst.getArraySizeOfPinPad() == pinPadArraySecond.getArraySizeOfPinPad());
+        boolean atLeastOneElementIsNotTheSame = false;
+        for (int counter = 0; counter < pinPadArrayFirst.getArraySizeOfPinPad(); counter++) {
+            if (pinPadArrayFirst.getElement(counter) != pinPadArraySecond.getElement(counter)) {
+                atLeastOneElementIsNotTheSame = true;
+                break;
+            }
+        }
+        Assert.assertTrue(atLeastOneElementIsNotTheSame);
+    }
 }
+
