@@ -1,6 +1,6 @@
 # nextpin11
 
-## Meta
+## Meta<sup>Meta<sup>Meta</sup></sup>
 
 This repo contains a hobby project that I originally thought of in early 2017. I had worked through a few iterations of it mainly to get some practice coding. Written in Java because as of right now it's pretty much the only language I'm familiar with.
 
@@ -8,11 +8,11 @@ I'm generating this README with the hopes that others would be able to get an id
 
 ## Project Description
 
-#### **_One-sentence goal_**
+### **_One-sentence goal_**
 
 To build a PIN system (like the kind used on an ATM) that is more secure than the traditional 10-number pad PIN system, yet still simple enough that an average person can enter their "password" in a reasonable amount of time and without much complication.
 
-#### **_What happened?_**
+### **_What happened?_**
 
 Your name is Alice and you have a bank account, just like many of the other people in your community. You have an ATM card that allows you to access the funds in your account by using any number of ATM machines installed throughout your city. You use these ATM machines by first inserting your ATM card (which the bank knows is associated with your account because of the data encoded in the magnetic strip on the card) and then inputting your 4-digit PIN, which happens to be **7245**. If you'll recall, you decided on that number the day you set up your bank account many years ago. You have also never told anyone this code, and assuming no one at the bank knows it, you understand that the only way a person can access your funds through an ATM is if they both have your ATM card _and also know your private 4-digit PIN_.
 
