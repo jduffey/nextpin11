@@ -1,16 +1,27 @@
 public class App {
 
+    public static final int SIZE_OF_ARRAY_SQUARE = 11;
+
     public static void main(String[] args) {
 
+        PinPadArray pinpad = new PinPadArray(SIZE_OF_ARRAY_SQUARE);
+
         System.out.println("*** Pinpad App ***");
-
-        PinPadArray pinpad = new PinPadArray(3);
-
-        System.out.println("Size of array: " + pinpad.getArraySizeOfPinPad());
+        System.out.println("Square Size: " + SIZE_OF_ARRAY_SQUARE);
+        System.out.println();
 
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
-            System.out.println("Index " + index + ": " + pinpad.getValueOfElement(index));
+            if(pinpad.getValueOfElement(index)<10){
+                System.out.print("  ");
+            }else if(pinpad.getValueOfElement(index)<100){
+                System.out.print(" ");
+            }
+            System.out.print(pinpad.getValueOfElement(index) + " ");
+            if ((index + 1) % SIZE_OF_ARRAY_SQUARE == 0) {
+                System.out.println();
+            }
         }
+
     }
 
 }
