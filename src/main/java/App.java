@@ -11,12 +11,12 @@ public class App {
         System.out.println();
 
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
-            if(pinpad.getValueOfElement(index)<10){
+            if(pinpad.get(index)<10){
                 System.out.print("  ");
-            }else if(pinpad.getValueOfElement(index)<100){
+            }else if(pinpad.get(index)<100){
                 System.out.print(" ");
             }
-            System.out.print(pinpad.getValueOfElement(index) + " ");
+            System.out.print(pinpad.get(index) + " ");
             if ((index + 1) % SIZE_OF_ARRAY_SQUARE == 0) {
                 System.out.println();
             }

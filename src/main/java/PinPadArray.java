@@ -20,7 +20,7 @@ public class PinPadArray {
         return theArrayItself.contains(numberWeAreCheckingToSeeExistsInTheArray);
     }
 
-    public int getValueOfElement(int theElementToGet) {
+    public int get(int theElementToGet) {
         return (int)theArrayItself.get(theElementToGet);
     }
 }

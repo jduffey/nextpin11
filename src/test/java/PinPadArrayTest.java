@@ -36,7 +36,7 @@ public class PinPadArrayTest {
         Assert.assertTrue(pinPadArrayFirst.getArraySizeOfPinPad() == pinPadArraySecond.getArraySizeOfPinPad());
         boolean atLeastOneElementIsNotTheSame = false;
         for (int counter = 0; counter < pinPadArrayFirst.getArraySizeOfPinPad(); counter++) {
-            if (pinPadArrayFirst.getValueOfElement(counter) != pinPadArraySecond.getValueOfElement(counter)) {
+            if (pinPadArrayFirst.get(counter) != pinPadArraySecond.get(counter)) {
                 atLeastOneElementIsNotTheSame = true;
                 break;
             }
