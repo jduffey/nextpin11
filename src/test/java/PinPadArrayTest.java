@@ -62,10 +62,20 @@ public class PinPadArrayTest {
 
     @Test
     public void pinArrayShouldMatchSequentialValuesOf2DIntArray() {
-        PinPadArray pinPadArray = new PinPadArray(3);
-        for (int counter = 0; counter < pinPadArray.getArraySizeOfPinPad(); counter++) {
-            Assert.assertEquals((int) pinPadArray.get(counter),
-                    pinPadArray.getFromIntArray((counter / pinPadArray.getSquareSize()), (counter + pinPadArray.getSquareSize()) % pinPadArray.getSquareSize()));
+        PinPadArray pinPadArray1 = new PinPadArray(3);
+        for (int counter = 0; counter < pinPadArray1.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals((int) pinPadArray1.get(counter),
+                    pinPadArray1.getFromIntArray((counter / pinPadArray1.getSquareSize()), (counter + pinPadArray1.getSquareSize()) % pinPadArray1.getSquareSize()));
+        }
+        PinPadArray pinPadArray2 = new PinPadArray(5);
+        for (int counter = 0; counter < pinPadArray2.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals((int) pinPadArray2.get(counter),
+                    pinPadArray2.getFromIntArray((counter / pinPadArray2.getSquareSize()), (counter + pinPadArray2.getSquareSize()) % pinPadArray2.getSquareSize()));
+        }
+        PinPadArray pinPadArray3 = new PinPadArray(6);
+        for (int counter = 0; counter < pinPadArray3.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals((int) pinPadArray3.get(counter),
+                    pinPadArray3.getFromIntArray((counter / pinPadArray3.getSquareSize()), (counter + pinPadArray3.getSquareSize()) % pinPadArray3.getSquareSize()));
         }
     }
 

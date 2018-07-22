@@ -19,7 +19,7 @@ public class PinPadArray {
         Collections.shuffle(theArrayItself);
 
         for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
-            intArray[counter / sizeOfArraySquare][(counter + 3) % sizeOfArraySquare] = (int) theArrayItself.get(counter);
+            intArray[counter / sizeOfArraySquare][(counter + sizeOfArraySquare) % sizeOfArraySquare] = (int) theArrayItself.get(counter);
         }
 
     }
