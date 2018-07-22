@@ -49,6 +49,6 @@ public class PinPadArray {
     }
 
     public int colOf(int i) {
-        return (i + 3) % sizeOfArraySquare;
+        return (i + sizeOfArraySquare) % sizeOfArraySquare;
     }
 }

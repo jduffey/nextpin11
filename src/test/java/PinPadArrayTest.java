@@ -131,6 +131,32 @@ public class PinPadArrayTest {
         Assert.assertEquals(0, pinPadArray.colOf(6));
         Assert.assertEquals(1, pinPadArray.colOf(7));
         Assert.assertEquals(2, pinPadArray.colOf(8));
+        PinPadArray pinPadArray2 = new PinPadArray(5);
+        Assert.assertEquals(0, pinPadArray2.colOf(0));
+        Assert.assertEquals(1, pinPadArray2.colOf(1));
+        Assert.assertEquals(2, pinPadArray2.colOf(2));
+        Assert.assertEquals(3, pinPadArray2.colOf(3));
+        Assert.assertEquals(4, pinPadArray2.colOf(4));
+        Assert.assertEquals(0, pinPadArray2.colOf(5));
+        Assert.assertEquals(1, pinPadArray2.colOf(6));
+        Assert.assertEquals(2, pinPadArray2.colOf(7));
+        Assert.assertEquals(3, pinPadArray2.colOf(8));
+        Assert.assertEquals(4, pinPadArray2.colOf(9));
+        Assert.assertEquals(0, pinPadArray2.colOf(10));
+        Assert.assertEquals(1, pinPadArray2.colOf(11));
+        Assert.assertEquals(2, pinPadArray2.colOf(12));
+        Assert.assertEquals(3, pinPadArray2.colOf(13));
+        Assert.assertEquals(4, pinPadArray2.colOf(14));
+        Assert.assertEquals(0, pinPadArray2.colOf(15));
+        Assert.assertEquals(1, pinPadArray2.colOf(16));
+        Assert.assertEquals(2, pinPadArray2.colOf(17));
+        Assert.assertEquals(3, pinPadArray2.colOf(18));
+        Assert.assertEquals(4, pinPadArray2.colOf(19));
+        Assert.assertEquals(0, pinPadArray2.colOf(20));
+        Assert.assertEquals(1, pinPadArray2.colOf(21));
+        Assert.assertEquals(2, pinPadArray2.colOf(22));
+        Assert.assertEquals(3, pinPadArray2.colOf(23));
+        Assert.assertEquals(4, pinPadArray2.colOf(24));
     }
 }
 
