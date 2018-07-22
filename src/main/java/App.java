@@ -17,7 +17,7 @@ public class App {
 
         // See both outputs
         for(int i = 0; i<pinpad.getArraySizeOfPinPad(); i++){
-            System.out.println(pinpad.get(i)+ " "+ pinpad.getFromIntArray(0,0));
+            System.out.println(pinpad.get(i)+ " "+ pinpad.getFromIntArray(pinpad.rowOf(i),pinpad.colOf(i)));
         }
 
 //        Scanner scanner = new Scanner(System.in);
