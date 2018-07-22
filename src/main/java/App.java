@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class App {
 
     public static final int SIZE_OF_ARRAY_SQUARE = 5;
+    public static int indexOfZero = -999;
 
     public static void main(String[] args) {
 
@@ -11,6 +14,22 @@ public class App {
         displayColumnHeaderUnderscores();
 
         displayPinpadSquare(pinpad);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What index is 0? ");
+
+        int inputGuess = scanner.nextInt();
+
+        for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
+            if (pinpad.get(index) == 0) {
+                indexOfZero = index;
+                break;
+            }
+        }
+
+        System.out.println();
+        System.out.println("Index of 0 is: " + indexOfZero);
+        System.out.println("You guessed: " + inputGuess);
 
     }
 
@@ -35,6 +54,7 @@ public class App {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     private static void displayIntroMessage() {
