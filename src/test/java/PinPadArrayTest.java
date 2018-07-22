@@ -45,7 +45,7 @@ public class PinPadArrayTest {
     }
 
     @Test
-    public void pinpadHasMethodToReturnSquareSize(){
+    public void pinpadHasMethodToReturnSquareSize() {
         PinPadArray pinPadArray = new PinPadArray(3);
         Assert.assertEquals(3, pinPadArray.getSquareSize());
     }
@@ -57,7 +57,6 @@ public class PinPadArrayTest {
             Assert.assertEquals((int) pinPadArray.get(counter),
                     pinPadArray.getFromIntArray((counter / pinPadArray.getSquareSize()), (counter + 3) % pinPadArray.getSquareSize()));
         }
-
     }
 }
 
