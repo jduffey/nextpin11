@@ -44,11 +44,11 @@ public class PinPadArray {
         return sizeOfArraySquare;
     }
 
-    public int rowEquiv(int i) {
+    public int rowOf(int i) {
         return i / sizeOfArraySquare;
     }
 
-    public int getColEquiv(int i) {
+    public int colOf(int i) {
         return (i + 3) % sizeOfArraySquare;
     }
 }

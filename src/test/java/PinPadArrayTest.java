@@ -62,29 +62,29 @@ public class PinPadArrayTest {
     @Test
     public void shouldHaveMethodForConvertingToRowEquivalent() {
         PinPadArray pinPadArray = new PinPadArray(3);
-        Assert.assertEquals(0, pinPadArray.rowEquiv(0));
-        Assert.assertEquals(0, pinPadArray.rowEquiv(1));
-        Assert.assertEquals(0, pinPadArray.rowEquiv(2));
-        Assert.assertEquals(1, pinPadArray.rowEquiv(3));
-        Assert.assertEquals(1, pinPadArray.rowEquiv(4));
-        Assert.assertEquals(1, pinPadArray.rowEquiv(5));
-        Assert.assertEquals(2, pinPadArray.rowEquiv(6));
-        Assert.assertEquals(2, pinPadArray.rowEquiv(7));
-        Assert.assertEquals(2, pinPadArray.rowEquiv(8));
+        Assert.assertEquals(0, pinPadArray.rowOf(0));
+        Assert.assertEquals(0, pinPadArray.rowOf(1));
+        Assert.assertEquals(0, pinPadArray.rowOf(2));
+        Assert.assertEquals(1, pinPadArray.rowOf(3));
+        Assert.assertEquals(1, pinPadArray.rowOf(4));
+        Assert.assertEquals(1, pinPadArray.rowOf(5));
+        Assert.assertEquals(2, pinPadArray.rowOf(6));
+        Assert.assertEquals(2, pinPadArray.rowOf(7));
+        Assert.assertEquals(2, pinPadArray.rowOf(8));
     }
 
     @Test
     public void shouldHaveMethodForConvertingToColumnEquivalent() {
         PinPadArray pinPadArray = new PinPadArray(3);
-        Assert.assertEquals(0, pinPadArray.getColEquiv(0));
-        Assert.assertEquals(1, pinPadArray.getColEquiv(1));
-        Assert.assertEquals(2, pinPadArray.getColEquiv(2));
-        Assert.assertEquals(0, pinPadArray.getColEquiv(3));
-        Assert.assertEquals(1, pinPadArray.getColEquiv(4));
-        Assert.assertEquals(2, pinPadArray.getColEquiv(5));
-        Assert.assertEquals(0, pinPadArray.getColEquiv(6));
-        Assert.assertEquals(1, pinPadArray.getColEquiv(7));
-        Assert.assertEquals(2, pinPadArray.getColEquiv(8));
+        Assert.assertEquals(0, pinPadArray.colOf(0));
+        Assert.assertEquals(1, pinPadArray.colOf(1));
+        Assert.assertEquals(2, pinPadArray.colOf(2));
+        Assert.assertEquals(0, pinPadArray.colOf(3));
+        Assert.assertEquals(1, pinPadArray.colOf(4));
+        Assert.assertEquals(2, pinPadArray.colOf(5));
+        Assert.assertEquals(0, pinPadArray.colOf(6));
+        Assert.assertEquals(1, pinPadArray.colOf(7));
+        Assert.assertEquals(2, pinPadArray.colOf(8));
     }
 }
 
