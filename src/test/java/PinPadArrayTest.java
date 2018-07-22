@@ -43,5 +43,20 @@ public class PinPadArrayTest {
         }
         Assert.assertTrue(atLeastOneElementIsNotTheSame);
     }
+
+    @Test
+    public void pinArrayShouldMatchSequentialValuesOf2DIntArray(){
+        PinPadArray pinPadArray = new PinPadArray(3);
+        Assert.assertEquals(pinPadArray.get(0),pinPadArray.getFromIntArray(0,0));
+        Assert.assertEquals(pinPadArray.get(1),pinPadArray.getFromIntArray(0,1));
+        Assert.assertEquals(pinPadArray.get(2),pinPadArray.getFromIntArray(0,2));
+        Assert.assertEquals(pinPadArray.get(3),pinPadArray.getFromIntArray(1,0));
+        Assert.assertEquals(pinPadArray.get(4),pinPadArray.getFromIntArray(1,1));
+        Assert.assertEquals(pinPadArray.get(5),pinPadArray.getFromIntArray(1,2));
+        Assert.assertEquals(pinPadArray.get(6),pinPadArray.getFromIntArray(2,0));
+        Assert.assertEquals(pinPadArray.get(7),pinPadArray.getFromIntArray(2,1));
+        Assert.assertEquals(pinPadArray.get(8),pinPadArray.getFromIntArray(2,2));
+
+    }
 }
 

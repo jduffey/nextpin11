@@ -4,12 +4,22 @@ import java.util.Collections;
 public class PinPadArray {
 
     private ArrayList theArrayItself = new ArrayList();
+    private int[][] intArray;
 
     public PinPadArray(int sizeOfArraySquare) {
+
+        intArray = new int[sizeOfArraySquare][sizeOfArraySquare];
+
         for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
             theArrayItself.add(counter);
         }
+
         Collections.shuffle(theArrayItself);
+
+        for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
+            intArray[counter/sizeOfArraySquare][(counter+3) % sizeOfArraySquare] = (int) theArrayItself.get(counter);
+        }
+
     }
 
     public int getArraySizeOfPinPad() {
@@ -21,24 +31,11 @@ public class PinPadArray {
     }
 
     public int get(int theElementToGet) {
-        return (int)theArrayItself.get(theElementToGet);
+        return (int) theArrayItself.get(theElementToGet);
     }
 
-    /*
-    Code for int[][]
-
-    int[][] intArray = new int[SIZE_OF_ARRAY_SQUARE][SIZE_OF_ARRAY_SQUARE];
-
-        for (int pinpadIndex = 0; pinpadIndex < SIZE_OF_ARRAY_SQUARE * SIZE_OF_ARRAY_SQUARE; pinpadIndex++) {
-            for (int i = 1; i < SIZE_OF_ARRAY_SQUARE; i++) {
-                for (int j = 1; j < SIZE_OF_ARRAY_SQUARE; j++) {
-                    intArray[i][j] = pinpad.get(pinpadIndex);
-                }
-            }
-        }
-
-     */
-
-
+    public int getFromIntArray(int i, int j) {
+        return intArray[i][j];
+    }
 
 }
