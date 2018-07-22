@@ -8,14 +8,21 @@ public class App {
 
         System.out.println("*** Pinpad App ***");
         System.out.println("Square Size: " + SIZE_OF_ARRAY_SQUARE);
+        
+        for (int i = 0; i < SIZE_OF_ARRAY_SQUARE; i++) {
+            System.out.print("___ ");
+        }
+
         System.out.println();
 
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
-            if(pinpad.get(index)<10){
+
+            if (pinpad.get(index) < 10) {
                 System.out.print("  ");
-            }else if(pinpad.get(index)<100){
+            } else if (pinpad.get(index) < 100) {
                 System.out.print(" ");
             }
+
             System.out.print(pinpad.get(index) + " ");
             if ((index + 1) % SIZE_OF_ARRAY_SQUARE == 0) {
                 System.out.println();
