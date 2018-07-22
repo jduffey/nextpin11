@@ -43,4 +43,12 @@ public class PinPadArray {
     public int getSquareSize() {
         return sizeOfArraySquare;
     }
+
+    public int rowEquiv(int i) {
+        return i / sizeOfArraySquare;
+    }
+
+    public int getColEquiv(int i) {
+        return (i + 3) % sizeOfArraySquare;
+    }
 }

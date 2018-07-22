@@ -58,5 +58,33 @@ public class PinPadArrayTest {
                     pinPadArray.getFromIntArray((counter / pinPadArray.getSquareSize()), (counter + 3) % pinPadArray.getSquareSize()));
         }
     }
+
+    @Test
+    public void shouldHaveMethodForConvertingToRowEquivalent() {
+        PinPadArray pinPadArray = new PinPadArray(3);
+        Assert.assertEquals(0, pinPadArray.rowEquiv(0));
+        Assert.assertEquals(0, pinPadArray.rowEquiv(1));
+        Assert.assertEquals(0, pinPadArray.rowEquiv(2));
+        Assert.assertEquals(1, pinPadArray.rowEquiv(3));
+        Assert.assertEquals(1, pinPadArray.rowEquiv(4));
+        Assert.assertEquals(1, pinPadArray.rowEquiv(5));
+        Assert.assertEquals(2, pinPadArray.rowEquiv(6));
+        Assert.assertEquals(2, pinPadArray.rowEquiv(7));
+        Assert.assertEquals(2, pinPadArray.rowEquiv(8));
+    }
+
+    @Test
+    public void shouldHaveMethodForConvertingToColumnEquivalent() {
+        PinPadArray pinPadArray = new PinPadArray(3);
+        Assert.assertEquals(0, pinPadArray.getColEquiv(0));
+        Assert.assertEquals(1, pinPadArray.getColEquiv(1));
+        Assert.assertEquals(2, pinPadArray.getColEquiv(2));
+        Assert.assertEquals(0, pinPadArray.getColEquiv(3));
+        Assert.assertEquals(1, pinPadArray.getColEquiv(4));
+        Assert.assertEquals(2, pinPadArray.getColEquiv(5));
+        Assert.assertEquals(0, pinPadArray.getColEquiv(6));
+        Assert.assertEquals(1, pinPadArray.getColEquiv(7));
+        Assert.assertEquals(2, pinPadArray.getColEquiv(8));
+    }
 }
 
