@@ -5,9 +5,11 @@ public class PinPadArray {
 
     private ArrayList theArrayItself = new ArrayList();
     private int[][] intArray;
+    private int sizeOfArraySquare;
 
     public PinPadArray(int sizeOfArraySquare) {
 
+        this.sizeOfArraySquare = sizeOfArraySquare;
         intArray = new int[sizeOfArraySquare][sizeOfArraySquare];
 
         for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
@@ -38,4 +40,7 @@ public class PinPadArray {
         return intArray[i][j];
     }
 
+    public int getSquareSize() {
+        return sizeOfArraySquare;
+    }
 }
