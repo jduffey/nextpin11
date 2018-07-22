@@ -16,16 +16,26 @@ public class PinPadArrayTest {
     }
 
     @Test
-    public void pinArrayShouldTakeDifferentSquareSizeAsArgument() {
-        PinPadArray pinPadArray = new PinPadArray(5);
-        Assert.assertEquals(25, pinPadArray.getArraySizeOfPinPad());
+    public void pinArrayShouldAllowDifferentSquareSizeAsArgument() {
+        PinPadArray pinPadArray1 = new PinPadArray(4);
+        Assert.assertEquals(16, pinPadArray1.getArraySizeOfPinPad());
+        PinPadArray pinPadArray2 = new PinPadArray(5);
+        Assert.assertEquals(25, pinPadArray2.getArraySizeOfPinPad());
+        PinPadArray pinPadArray3 = new PinPadArray(6);
+        Assert.assertEquals(36, pinPadArray3.getArraySizeOfPinPad());
+        PinPadArray pinPadArray4 = new PinPadArray(7);
+        Assert.assertEquals(49, pinPadArray4.getArraySizeOfPinPad());
     }
 
     @Test
     public void pinArrayShouldContainEachNumberFromZeroToTheSizeOfTheArrayMinusOne() {
-        PinPadArray pinPadArray = new PinPadArray(3);
-        for (int counter = 0; counter < pinPadArray.getArraySizeOfPinPad(); counter++) {
-            Assert.assertEquals(true, pinPadArray.containsThisNumber(counter));
+        PinPadArray pinPadArray1 = new PinPadArray(3);
+        for (int counter = 0; counter < pinPadArray1.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals(true, pinPadArray1.containsThisNumber(counter));
+        }
+        PinPadArray pinPadArray2 = new PinPadArray(9);
+        for (int counter = 0; counter < pinPadArray2.getArraySizeOfPinPad(); counter++) {
+            Assert.assertEquals(true, pinPadArray2.containsThisNumber(counter));
         }
     }
 
@@ -55,7 +65,7 @@ public class PinPadArrayTest {
         PinPadArray pinPadArray = new PinPadArray(3);
         for (int counter = 0; counter < pinPadArray.getArraySizeOfPinPad(); counter++) {
             Assert.assertEquals((int) pinPadArray.get(counter),
-                    pinPadArray.getFromIntArray((counter / pinPadArray.getSquareSize()), (counter + 3) % pinPadArray.getSquareSize()));
+                    pinPadArray.getFromIntArray((counter / pinPadArray.getSquareSize()), (counter + pinPadArray.getSquareSize()) % pinPadArray.getSquareSize()));
         }
     }
 
