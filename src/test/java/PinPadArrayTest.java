@@ -81,16 +81,42 @@ public class PinPadArrayTest {
 
     @Test
     public void shouldHaveMethodForConvertingToRowEquivalent() {
-        PinPadArray pinPadArray = new PinPadArray(3);
-        Assert.assertEquals(0, pinPadArray.rowOf(0));
-        Assert.assertEquals(0, pinPadArray.rowOf(1));
-        Assert.assertEquals(0, pinPadArray.rowOf(2));
-        Assert.assertEquals(1, pinPadArray.rowOf(3));
-        Assert.assertEquals(1, pinPadArray.rowOf(4));
-        Assert.assertEquals(1, pinPadArray.rowOf(5));
-        Assert.assertEquals(2, pinPadArray.rowOf(6));
-        Assert.assertEquals(2, pinPadArray.rowOf(7));
-        Assert.assertEquals(2, pinPadArray.rowOf(8));
+        PinPadArray pinPadArray1 = new PinPadArray(3);
+        Assert.assertEquals(0, pinPadArray1.rowOf(0));
+        Assert.assertEquals(0, pinPadArray1.rowOf(1));
+        Assert.assertEquals(0, pinPadArray1.rowOf(2));
+        Assert.assertEquals(1, pinPadArray1.rowOf(3));
+        Assert.assertEquals(1, pinPadArray1.rowOf(4));
+        Assert.assertEquals(1, pinPadArray1.rowOf(5));
+        Assert.assertEquals(2, pinPadArray1.rowOf(6));
+        Assert.assertEquals(2, pinPadArray1.rowOf(7));
+        Assert.assertEquals(2, pinPadArray1.rowOf(8));
+        PinPadArray pinPadArray2 = new PinPadArray(5);
+        Assert.assertEquals(0, pinPadArray2.rowOf(0));
+        Assert.assertEquals(0, pinPadArray2.rowOf(1));
+        Assert.assertEquals(0, pinPadArray2.rowOf(2));
+        Assert.assertEquals(0, pinPadArray2.rowOf(3));
+        Assert.assertEquals(0, pinPadArray2.rowOf(4));
+        Assert.assertEquals(1, pinPadArray2.rowOf(5));
+        Assert.assertEquals(1, pinPadArray2.rowOf(6));
+        Assert.assertEquals(1, pinPadArray2.rowOf(7));
+        Assert.assertEquals(1, pinPadArray2.rowOf(8));
+        Assert.assertEquals(1, pinPadArray2.rowOf(9));
+        Assert.assertEquals(2, pinPadArray2.rowOf(10));
+        Assert.assertEquals(2, pinPadArray2.rowOf(11));
+        Assert.assertEquals(2, pinPadArray2.rowOf(12));
+        Assert.assertEquals(2, pinPadArray2.rowOf(13));
+        Assert.assertEquals(2, pinPadArray2.rowOf(14));
+        Assert.assertEquals(3, pinPadArray2.rowOf(15));
+        Assert.assertEquals(3, pinPadArray2.rowOf(16));
+        Assert.assertEquals(3, pinPadArray2.rowOf(17));
+        Assert.assertEquals(3, pinPadArray2.rowOf(18));
+        Assert.assertEquals(3, pinPadArray2.rowOf(19));
+        Assert.assertEquals(4, pinPadArray2.rowOf(20));
+        Assert.assertEquals(4, pinPadArray2.rowOf(21));
+        Assert.assertEquals(4, pinPadArray2.rowOf(22));
+        Assert.assertEquals(4, pinPadArray2.rowOf(23));
+        Assert.assertEquals(4, pinPadArray2.rowOf(24));
     }
 
     @Test
