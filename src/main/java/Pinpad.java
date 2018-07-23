@@ -18,10 +18,14 @@ public class Pinpad {
 
         Collections.shuffle(theArrayItself);
 
-        for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
-            intArray[counter / sizeOfArraySquare][(counter + sizeOfArraySquare) % sizeOfArraySquare] = (int) theArrayItself.get(counter);
-        }
+        fillIntArrayWithArrayListValues(sizeOfArraySquare, theArrayItself, intArray);
 
+    }
+
+    private void fillIntArrayWithArrayListValues(int sizeOfArraySquare, ArrayList arrayList, int[][] intArray) {
+        for (int counter = 0; counter < sizeOfArraySquare * sizeOfArraySquare; counter++) {
+            intArray[counter / sizeOfArraySquare][(counter + sizeOfArraySquare) % sizeOfArraySquare] = (int) arrayList.get(counter);
+        }
     }
 
     public int getArraySizeOfPinPad() {
@@ -51,4 +55,9 @@ public class Pinpad {
     public int colOf(int i) {
         return (i + sizeOfArraySquare) % sizeOfArraySquare;
     }
+
+    public void setCustomArray(int squareSizeOfArray, ArrayList customArray) {
+        fillIntArrayWithArrayListValues(squareSizeOfArray, customArray, intArray);
+    }
 }
+

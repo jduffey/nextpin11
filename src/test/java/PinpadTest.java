@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class PinpadTest {
 
     @Test
@@ -157,6 +159,34 @@ public class PinpadTest {
         Assert.assertEquals(2, pinPadArray2.colOf(22));
         Assert.assertEquals(3, pinPadArray2.colOf(23));
         Assert.assertEquals(4, pinPadArray2.colOf(24));
+    }
+
+    @Test
+    public void canSetCustomPinpad() {
+        // The values are randomly generated and assigned in the constructor
+        Pinpad pinpad = new Pinpad(3);
+        // Declare a custom array and write the int[][] with it
+        ArrayList customArray = new ArrayList();
+        customArray.add(0);
+        customArray.add(1);
+        customArray.add(2);
+        customArray.add(3);
+        customArray.add(4);
+        customArray.add(5);
+        customArray.add(6);
+        customArray.add(7);
+        customArray.add(8);
+        pinpad.setCustomArray(3, customArray);
+
+        Assert.assertEquals(0, pinpad.getFromIntArray(0,0));
+        Assert.assertEquals(1, pinpad.getFromIntArray(0,1));
+        Assert.assertEquals(2, pinpad.getFromIntArray(0,2));
+        Assert.assertEquals(3, pinpad.getFromIntArray(1,0));
+        Assert.assertEquals(4, pinpad.getFromIntArray(1,1));
+        Assert.assertEquals(5, pinpad.getFromIntArray(1,2));
+        Assert.assertEquals(6, pinpad.getFromIntArray(2,0));
+        Assert.assertEquals(7, pinpad.getFromIntArray(2,1));
+        Assert.assertEquals(8, pinpad.getFromIntArray(2,2));
     }
 }
 
