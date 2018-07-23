@@ -167,15 +167,9 @@ public class PinpadTest {
         Pinpad pinpad = new Pinpad(3);
         // Declare a custom array and write the int[][] with it
         ArrayList customArray = new ArrayList();
-        customArray.add(0);
-        customArray.add(1);
-        customArray.add(2);
-        customArray.add(3);
-        customArray.add(4);
-        customArray.add(5);
-        customArray.add(6);
-        customArray.add(7);
-        customArray.add(8);
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
         pinpad.setCustomArray(3, customArray);
 
         Assert.assertEquals(0, pinpad.getFromIntArray(0, 0));
@@ -195,32 +189,9 @@ public class PinpadTest {
         Pinpad pinpad = new Pinpad(5);
         // Declare a custom array and write the int[][] with it
         ArrayList customArray = new ArrayList();
-        customArray.add(0);
-        customArray.add(1);
-        customArray.add(2);
-        customArray.add(3);
-        customArray.add(4);
-        customArray.add(5);
-        customArray.add(6);
-        customArray.add(7);
-        customArray.add(8);
-        customArray.add(9);
-        customArray.add(10);
-        customArray.add(11);
-        customArray.add(12);
-        customArray.add(13);
-        customArray.add(14);
-        customArray.add(15);
-        customArray.add(16);
-        customArray.add(17);
-        customArray.add(18);
-        customArray.add(19);
-        customArray.add(20);
-        customArray.add(21);
-        customArray.add(22);
-        customArray.add(23);
-        customArray.add(24);
-
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
         pinpad.setCustomArray(5, customArray);
 
         Assert.assertEquals(0, pinpad.getFromIntArray(0, 0));
