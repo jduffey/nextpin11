@@ -1,15 +1,14 @@
 public class Customer {
 
-    private int secretNumber;
+    private int anchorNumber;
     private int directionNumber;
-    private int squareSize;
 
-    public void setSecretNumber(int secretNumber){
-        this.secretNumber = secretNumber;
+    public void setAnchorNumber(int anchorNumber){
+        this.anchorNumber = anchorNumber;
     }
 
-    public int getSecretNumber(){
-        return secretNumber;
+    public int getAnchorNumber(){
+        return anchorNumber;
     }
 
     public void setDirectionNumber(int directionNumber) {
@@ -20,11 +19,4 @@ public class Customer {
         return directionNumber;
     }
 
-    public void setSquareSize(int squareSize) {
-        this.squareSize = squareSize;
-    }
-
-    public int getSquareSize() {
-        return squareSize;
-    }
 }

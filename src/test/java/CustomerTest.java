@@ -4,24 +4,17 @@ import org.junit.Test;
 public class CustomerTest {
 
     @Test
-    public void shouldSetAndGetSecretNumber(){
+    public void shouldSetAndGetSecretNumber() {
         Customer customer = new Customer();
-        customer.setSecretNumber(0);
-        Assert.assertEquals(0,customer.getSecretNumber());
+        customer.setAnchorNumber(0);
+        Assert.assertEquals(0, customer.getAnchorNumber());
     }
 
     @Test
-    public void shouldSetAndGetDirectionNumber(){
+    public void shouldSetAndGetDirectionNumber() {
         Customer customer = new Customer();
         customer.setDirectionNumber(5);
-        Assert.assertEquals(5,customer.getDirectionNumber());
-    }
-
-    @Test
-    public void shouldSetAndGetSquareSize(){
-        Customer customer = new Customer();
-        customer.setSquareSize(3);
-        Assert.assertEquals(3,customer.getSquareSize());
+        Assert.assertEquals(5, customer.getDirectionNumber());
     }
 
 }

@@ -1,13 +1,11 @@
-import java.util.Scanner;
-
 public class App {
 
-    public static final int SIZE_OF_ARRAY_SQUARE = 5;
+    public static final int SIZE_OF_ARRAY_SQUARE = 7;
     public static int indexOfZero = -999;
 
     public static void main(String[] args) {
 
-        PinPadArray pinpad = new PinPadArray(SIZE_OF_ARRAY_SQUARE);
+        Pinpad pinpad = new Pinpad(SIZE_OF_ARRAY_SQUARE);
 
         displayIntroMessage();
 
@@ -16,9 +14,9 @@ public class App {
         displayPinpadSquare(pinpad);
 
         // See both outputs
-        for(int i = 0; i<pinpad.getArraySizeOfPinPad(); i++){
-            System.out.println(pinpad.get(i)+ " "+ pinpad.getFromIntArray(pinpad.rowOf(i),pinpad.colOf(i)));
-        }
+//        for(int i = 0; i<pinpad.getArraySizeOfPinPad(); i++){
+//            System.out.println(pinpad.get(i)+ " "+ pinpad.getFromIntArray(pinpad.rowOf(i),pinpad.colOf(i)));
+//        }
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.print("What index is 0? ");
@@ -45,7 +43,7 @@ public class App {
         System.out.println();
     }
 
-    private static void displayPinpadSquare(PinPadArray pinpad) {
+    private static void displayPinpadSquare(Pinpad pinpad) {
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
 
             if (pinpad.get(index) < 10) {
