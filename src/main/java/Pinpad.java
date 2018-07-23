@@ -60,8 +60,5 @@ public class Pinpad {
         fillIntArrayWithArrayListValues(squareSizeOfArray, customArray, intArray);
     }
 
-    public int getSecretNumber() {
-        return 5;
-    }
 }
 
