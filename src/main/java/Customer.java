@@ -3,11 +3,11 @@ public class Customer {
     private int anchorNumber;
     private int directionNumber;
 
-    public void setAnchorNumber(int anchorNumber){
+    public void setAnchorNumber(int anchorNumber) {
         this.anchorNumber = anchorNumber;
     }
 
-    public int getAnchorNumber(){
+    public int getAnchorNumber() {
         return anchorNumber;
     }
 
@@ -15,7 +15,7 @@ public class Customer {
         this.directionNumber = directionNumber;
     }
 
-    public int getDirectionNumber(){
+    public int getDirectionNumber() {
         return directionNumber;
     }
 
