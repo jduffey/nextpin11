@@ -163,63 +163,28 @@ public class PinpadTest {
 
     @Test
     public void canSetCustomPinpad() {
-        // The values are randomly generated and assigned in the constructor
         Pinpad pinpad = new Pinpad(3);
-        // Declare a custom array and write the int[][] with it
         ArrayList customArray = new ArrayList();
         for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
             customArray.add(i);
         }
         pinpad.setCustomArray(3, customArray);
-
-        Assert.assertEquals(0, pinpad.getFromIntArray(0, 0));
-        Assert.assertEquals(1, pinpad.getFromIntArray(0, 1));
-        Assert.assertEquals(2, pinpad.getFromIntArray(0, 2));
-        Assert.assertEquals(3, pinpad.getFromIntArray(1, 0));
-        Assert.assertEquals(4, pinpad.getFromIntArray(1, 1));
-        Assert.assertEquals(5, pinpad.getFromIntArray(1, 2));
-        Assert.assertEquals(6, pinpad.getFromIntArray(2, 0));
-        Assert.assertEquals(7, pinpad.getFromIntArray(2, 1));
-        Assert.assertEquals(8, pinpad.getFromIntArray(2, 2));
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            Assert.assertEquals(i, pinpad.getFromIntArray(i / pinpad.getSquareSize(), (i + pinpad.getSquareSize()) % pinpad.getSquareSize()));
+        }
     }
 
     @Test
     public void canSetCustomPinpadOfAnotherSize() {
-        // The values are randomly generated and assigned in the constructor
         Pinpad pinpad = new Pinpad(5);
-        // Declare a custom array and write the int[][] with it
         ArrayList customArray = new ArrayList();
         for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
             customArray.add(i);
         }
         pinpad.setCustomArray(5, customArray);
-
-        Assert.assertEquals(0, pinpad.getFromIntArray(0, 0));
-        Assert.assertEquals(1, pinpad.getFromIntArray(0, 1));
-        Assert.assertEquals(2, pinpad.getFromIntArray(0, 2));
-        Assert.assertEquals(3, pinpad.getFromIntArray(0, 3));
-        Assert.assertEquals(4, pinpad.getFromIntArray(0, 4));
-        Assert.assertEquals(5, pinpad.getFromIntArray(1, 0));
-        Assert.assertEquals(6, pinpad.getFromIntArray(1, 1));
-        Assert.assertEquals(7, pinpad.getFromIntArray(1, 2));
-        Assert.assertEquals(8, pinpad.getFromIntArray(1, 3));
-        Assert.assertEquals(9, pinpad.getFromIntArray(1, 4));
-        Assert.assertEquals(10, pinpad.getFromIntArray(2, 0));
-        Assert.assertEquals(11, pinpad.getFromIntArray(2, 1));
-        Assert.assertEquals(12, pinpad.getFromIntArray(2, 2));
-        Assert.assertEquals(13, pinpad.getFromIntArray(2, 3));
-        Assert.assertEquals(14, pinpad.getFromIntArray(2, 4));
-        Assert.assertEquals(15, pinpad.getFromIntArray(3, 0));
-        Assert.assertEquals(16, pinpad.getFromIntArray(3, 1));
-        Assert.assertEquals(17, pinpad.getFromIntArray(3, 2));
-        Assert.assertEquals(18, pinpad.getFromIntArray(3, 3));
-        Assert.assertEquals(19, pinpad.getFromIntArray(3, 4));
-        Assert.assertEquals(20, pinpad.getFromIntArray(4, 0));
-        Assert.assertEquals(21, pinpad.getFromIntArray(4, 1));
-        Assert.assertEquals(22, pinpad.getFromIntArray(4, 2));
-        Assert.assertEquals(23, pinpad.getFromIntArray(4, 3));
-        Assert.assertEquals(24, pinpad.getFromIntArray(4, 4));
-
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            Assert.assertEquals(i, pinpad.getFromIntArray(i / pinpad.getSquareSize(), (i + pinpad.getSquareSize()) % pinpad.getSquareSize()));
+        }
     }
 }
 
