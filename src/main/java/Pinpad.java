@@ -59,5 +59,9 @@ public class Pinpad {
     public void setCustomArray(int squareSizeOfArray, ArrayList customArray) {
         fillIntArrayWithArrayListValues(squareSizeOfArray, customArray, intArray);
     }
+
+    public int getSecretNumber() {
+        return 5;
+    }
 }
 
