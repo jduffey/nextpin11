@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class PinPadArray {
+public class Pinpad {
 
     private ArrayList theArrayItself = new ArrayList();
     private int[][] intArray;
     private int sizeOfArraySquare;
 
-    public PinPadArray(int sizeOfArraySquare) {
+    public Pinpad(int sizeOfArraySquare) {
 
         this.sizeOfArraySquare = sizeOfArraySquare;
         intArray = new int[sizeOfArraySquare][sizeOfArraySquare];
