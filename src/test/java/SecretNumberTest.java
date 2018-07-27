@@ -25,6 +25,7 @@ public class SecretNumberTest {
         // From 0 to 1 is "one right"
         // so from the center (4) we move one right
         // therefore secret number is 5
+        App.displayPinpadSquare(pinpad);
         Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
