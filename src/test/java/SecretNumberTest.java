@@ -7,55 +7,55 @@ public class SecretNumberTest {
 
     @Test
     public void goRightOneMovementWithinArrayBounds() {
-        Customer customer = new Customer();
-        customer.setAnchorNumber(0);
-        customer.setDirectionNumber(1);
-
-        // Want to produce:
-        // 0 1 2
-        // 3 4 5
-        // 6 7 8
-        Pinpad pinpad = new Pinpad(3);
+        // Test case for square size 3
+        Customer customer1 = new Customer();
+        customer1.setAnchorNumber(0);
+        customer1.setDirectionNumber(1);
+        Pinpad pinpad1 = new Pinpad(3);
         ArrayList customArray1 = new ArrayList();
-        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
             customArray1.add(i);
         }
-        pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
+        pinpad1.setCustomArray(pinpad1.getSquareSize(), customArray1);
+        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer1, pinpad1));
 
-        // From 0 to 1 is "one right"
-        // so from the center (4) we move one right
-        // therefore secret number is 5
-        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
+        // Test case for square size 5
+        Customer customer2 = new Customer();
+        customer2.setAnchorNumber(0);
+        customer2.setDirectionNumber(1);
+        Pinpad pinpad2 = new Pinpad(5);
+        ArrayList customArray2 = new ArrayList();
+        for (int i = 0; i < pinpad2.getSquareSize() * pinpad2.getSquareSize(); i++) {
+            customArray2.add(i);
+        }
+        pinpad2.setCustomArray(pinpad2.getSquareSize(), customArray2);
+        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer2, pinpad2));
     }
 
     @Test
     public void goLeftOneMovementWithinArrayBounds() {
-        Customer customer = new Customer();
-        customer.setAnchorNumber(0);
-        customer.setDirectionNumber(1);
-
-        // Want to produce:
-        // 1 0 2
-        // 3 4 5
-        // 6 7 8
-        Pinpad pinpad = new Pinpad(3);
+        Customer customer1 = new Customer();
+        customer1.setAnchorNumber(1);
+        customer1.setDirectionNumber(0);
+        Pinpad pinpad1 = new Pinpad(3);
         ArrayList customArray1 = new ArrayList();
-        customArray1.add(1);
-        customArray1.add(0);
-        customArray1.add(2);
-        customArray1.add(3);
-        customArray1.add(4);
-        customArray1.add(5);
-        customArray1.add(6);
-        customArray1.add(7);
-        customArray1.add(8);
+        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
+            customArray1.add(i);
+        }
+        pinpad1.setCustomArray(pinpad1.getSquareSize(), customArray1);
+        App.displayPinpadSquare(pinpad1);
+        Assert.assertEquals(3, SecretNumber.findSecretNumber(customer1, pinpad1));
 
-        pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
-
-        // From 0 to 1 is "one left"
-        // so from the center (4) we move one left
-        // therefore secret number is 3
-        Assert.assertEquals(3, SecretNumber.findSecretNumber(customer, pinpad));
+        Customer customer2 = new Customer();
+        customer2.setAnchorNumber(1);
+        customer2.setDirectionNumber(0);
+        Pinpad pinpad2 = new Pinpad(5);
+        ArrayList customArray2 = new ArrayList();
+        for (int i = 0; i < pinpad2.getSquareSize() * pinpad2.getSquareSize(); i++) {
+            customArray2.add(i);
+        }
+        pinpad2.setCustomArray(pinpad2.getSquareSize(), customArray2);
+        Assert.assertEquals(11, SecretNumber.findSecretNumber(customer2, pinpad2));
     }
 
     @Test
