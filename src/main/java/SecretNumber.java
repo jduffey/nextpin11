@@ -18,9 +18,9 @@ public class SecretNumber {
 
         int movementNumber;
 
-        if (((pinpad.getSquareSize() - 1) == 2 && posDir == posAnc - 2) || (2 * (pinpad.getSquareSize()) - 1 == 5 && posDir == posAnc - 2) || (3 * (pinpad.getSquareSize()) - 1 == 8 && posDir == posAnc - 2)) {
+        if ((0 == (posAnc + 1) % pinpad.getSquareSize() && posDir == posAnc - (pinpad.getSquareSize() - 1))) {
             movementNumber = 1;
-        } else if ((posAnc == 0 * pinpad.getSquareSize() && posDir == posAnc + 2) || (posAnc == 1 * pinpad.getSquareSize() && posDir == posAnc + 2) || (posAnc == 2 * pinpad.getSquareSize() && posDir == posAnc + 2)) {
+        } else if ((posAnc % pinpad.getSquareSize() == 0 && posDir == posAnc + (pinpad.getSquareSize() - 1))) {
             movementNumber = -1;
         } else
             movementNumber = posDir - posAnc;
