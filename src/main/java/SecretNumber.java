@@ -18,9 +18,9 @@ public class SecretNumber {
 
         int movementNumber;
 
-        if (posAnc == 2 && posDir == 0) {
+        if ((posAnc == 2 && posDir == 0)||(posAnc == 5 && posDir == 3)||(posAnc == 8 && posDir == 6)) {
             movementNumber = 1;
-        } else if (posAnc == 0 && posDir == 2) {
+        } else if ((posAnc == 0 && posDir == 2)||(posAnc == 3 && posDir == 5)||(posAnc == 6 && posDir == 8)) {
             movementNumber = -1;
         } else
             movementNumber = posDir - posAnc;
