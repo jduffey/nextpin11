@@ -1,13 +1,18 @@
 public class App {
 
-    public static final int SIZE_OF_ARRAY_SQUARE = 7;
+    public static final int SIZE_OF_ARRAY_SQUARE = 3;
     public static int indexOfZero = -999;
 
     public static void main(String[] args) {
 
         Pinpad pinpad = new Pinpad(SIZE_OF_ARRAY_SQUARE);
+        Customer customer = new Customer();
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(1);
 
         displayIntroMessage();
+
+        displayAnchorAndDirectionNumber(customer);
 
         displayColumnHeaderUnderscores();
 
@@ -34,6 +39,11 @@ public class App {
 //        System.out.println("Index of 0 is: " + indexOfZero);
 //        System.out.println("You guessed: " + inputGuess);
 
+    }
+
+    private static void displayAnchorAndDirectionNumber(Customer customer) {
+        System.out.println("Anchor: " + customer.getAnchorNumber());
+        System.out.println("Direction: " + customer.getDirectionNumber());
     }
 
     private static void displayColumnHeaderUnderscores() {
