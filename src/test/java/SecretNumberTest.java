@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class SecretNumberTest {
 
     @Test
-    public void goRightOne() {
+    public void goRightOneMovementWithinArrayBounds() {
         Customer customer = new Customer();
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
@@ -30,13 +30,13 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goLeftOne() {
+    public void goLeftOneMovementWithinArrayBounds() {
         Customer customer = new Customer();
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
 
         // Want to produce:
-        // 0 1 2
+        // 1 0 2
         // 3 4 5
         // 6 7 8
         Pinpad pinpad = new Pinpad(3);
@@ -53,9 +53,9 @@ public class SecretNumberTest {
 
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
 
-        // From 0 to 1 is "one right"
-        // so from the center (4) we move one right
-        // therefore secret number is 5
+        // From 0 to 1 is "one left"
+        // so from the center (4) we move one left
+        // therefore secret number is 3
         Assert.assertEquals(3, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
