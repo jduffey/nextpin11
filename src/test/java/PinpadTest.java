@@ -43,8 +43,9 @@ public class PinpadTest {
 
     @Test
     public void pinArrayShouldShuffleSuchThatTwoArraysOfSameSizeDoNotHaveTheSameArrangement() {
-        Pinpad pinPadArrayFirst = new Pinpad(3);
-        Pinpad pinPadArraySecond = new Pinpad(3);
+        int sizeOfSquare = 3;
+        Pinpad pinPadArrayFirst = new Pinpad(sizeOfSquare);
+        Pinpad pinPadArraySecond = new Pinpad(sizeOfSquare);
         Assert.assertTrue(pinPadArrayFirst.getArraySizeOfPinPad() == pinPadArraySecond.getArraySizeOfPinPad());
         boolean atLeastOneElementIsNotTheSame = false;
         for (int counter = 0; counter < pinPadArrayFirst.getArraySizeOfPinPad(); counter++) {
