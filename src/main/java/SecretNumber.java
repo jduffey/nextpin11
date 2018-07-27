@@ -18,13 +18,15 @@ public class SecretNumber {
 
         int movementNumber;
 
-        if ((posAnc == 2 && posDir == 0)||(posAnc == 5 && posDir == 3)||(posAnc == 8 && posDir == 6)) {
+        if (((pinpad.getSquareSize() - 1) == 2 && posDir == posAnc - 2) || (2 * (pinpad.getSquareSize()) - 1 == 5 && posDir == posAnc - 2) || (3 * (pinpad.getSquareSize()) - 1 == 8 && posDir == posAnc - 2)) {
             movementNumber = 1;
-        } else if ((posAnc == 0 && posDir == 2)||(posAnc == 3 && posDir == 5)||(posAnc == 6 && posDir == 8)) {
+        } else if ((posAnc == 0 * pinpad.getSquareSize() && posDir == posAnc + 2) || (posAnc == 1 * pinpad.getSquareSize() && posDir == posAnc + 2) || (posAnc == 2 * pinpad.getSquareSize() && posDir == posAnc + 2)) {
             movementNumber = -1;
         } else
             movementNumber = posDir - posAnc;
 
-        return pinpad.get(4 + movementNumber);
+        int positionOfMiddleOfPinpadSquare = pinpad.getArraySizeOfPinPad() / 2;
+
+        return pinpad.get(positionOfMiddleOfPinpadSquare + movementNumber);
     }
 }
