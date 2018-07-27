@@ -71,7 +71,7 @@ public class PinpadTest {
             customArray1.add(i);
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
-        System.out.println(customArray1);
+
         Assert.assertEquals(0,pinpad.getPosOfValue(0));
     }
 

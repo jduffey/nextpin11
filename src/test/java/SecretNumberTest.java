@@ -163,7 +163,6 @@ public class SecretNumberTest {
         customArray1.add(7);
         customArray1.add(4);
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
-        App.displayPinpadSquare(pinpad);
 
         Customer customer1 = new Customer();
         customer1.setAnchorNumber(0);
