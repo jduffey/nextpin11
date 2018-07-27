@@ -53,7 +53,7 @@ public class App {
         System.out.println();
     }
 
-    private static void displayPinpadSquare(Pinpad pinpad) {
+    public static void displayPinpadSquare(Pinpad pinpad) {
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
 
             if (pinpad.get(index) < 10) {
