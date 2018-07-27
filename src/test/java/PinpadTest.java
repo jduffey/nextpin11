@@ -63,6 +63,18 @@ public class PinpadTest {
         Assert.assertEquals(3, pinPadArray.getSquareSize());
     }
 
+    @Test
+    public void pinpadHasMethodToReturnArrayPositionOfGivenValue(){
+        Pinpad pinpad = new Pinpad(3);
+        ArrayList customArray1 = new ArrayList();
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray1.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
+        System.out.println(customArray1);
+        Assert.assertEquals(0,pinpad.getPosOfValue(0));
+    }
+
 //    @Test
 //    public void pinArrayShouldMatchSequentialValuesOf2DIntArray() {
 //        Pinpad pinPadArray1 = new Pinpad(3);
@@ -108,30 +120,32 @@ public class PinpadTest {
 //        }
 //    }
 
-//    @Test
-//    public void canSetCustomPinpads() {
-//        int squareSize = 3;
-//        Pinpad pinpad1 = new Pinpad(squareSize);
-//        ArrayList customArray1 = new ArrayList();
-//        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
-//            customArray1.add(i);
-//        }
-//        pinpad1.setCustomArray(squareSize, customArray1);
-//        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
-//            Assert.assertEquals(i, pinpad1.getFromIntArray(i / pinpad1.getSquareSize(), (i + pinpad1.getSquareSize()) % pinpad1.getSquareSize()));
-//        }
-//
-//        squareSize = 5;
-//        Pinpad pinpad2 = new Pinpad(squareSize);
-//        ArrayList customArray2 = new ArrayList();
-//        for (int i = 0; i < pinpad2.getSquareSize() * pinpad2.getSquareSize(); i++) {
-//            customArray2.add(i);
-//        }
-//        pinpad2.setCustomArray(squareSize, customArray2);
-//        for (int i = 0; i < pinpad2.getSquareSize() * pinpad2.getSquareSize(); i++) {
-//            Assert.assertEquals(i, pinpad2.getFromIntArray(i / pinpad2.getSquareSize(), (i + pinpad2.getSquareSize()) % pinpad2.getSquareSize()));
-//        }
-//    }
+    @Test
+    public void canSetCustomPinpads() {
+        int squareSize = 3;
+        Pinpad pinpad1 = new Pinpad(squareSize);
+
+        ArrayList customArray1 = new ArrayList();
+        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
+            customArray1.add(i);
+        }
+
+        pinpad1.setCustomArray(squareSize, customArray1);
+        for (int i = 0; i < pinpad1.getArraySizeOfPinPad(); i++) {
+            Assert.assertEquals(i, pinpad1.getPosOfValue(i));
+        }
+
+        squareSize = 5;
+        Pinpad pinpad2 = new Pinpad(squareSize);
+        ArrayList customArray2 = new ArrayList();
+        for (int i = 0; i < pinpad2.getSquareSize() * pinpad2.getSquareSize(); i++) {
+            customArray2.add(i);
+        }
+        pinpad2.setCustomArray(squareSize, customArray2);
+        for (int i = 0; i < pinpad1.getArraySizeOfPinPad(); i++) {
+            Assert.assertEquals(i, pinpad1.getPosOfValue(i));
+        }
+    }
 
 }
 
