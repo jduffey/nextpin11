@@ -107,46 +107,46 @@ public class SecretNumberTest {
 
     @Test
     public void goOneRightToWrapAroundToBeginningOfThatRowOnSquareSize3() {
-        Pinpad pinpad1 = new Pinpad(3);
-        ArrayList customArray1 = new ArrayList();
-        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
-            customArray1.add(i);
+        Pinpad pinpad = new Pinpad(3);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
         }
-        pinpad1.setCustomArray(pinpad1.getSquareSize(), customArray1);
-        Customer customer1 = new Customer();
-        customer1.setAnchorNumber(2);
-        customer1.setDirectionNumber(0);
-        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer1, pinpad1));
-        Customer customer2 = new Customer();
-        customer2.setAnchorNumber(5);
-        customer2.setDirectionNumber(3);
-        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer2, pinpad1));
-        Customer customer3 = new Customer();
-        customer3.setAnchorNumber(8);
-        customer3.setDirectionNumber(6);
-        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer3, pinpad1));
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(2);
+        customer.setDirectionNumber(0);
+        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(5);
+        customer.setDirectionNumber(3);
+        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(8);
+        customer.setDirectionNumber(6);
+        Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
     @Test
     public void goOneRightToWrapAroundToBeginningOfThatRowOnSquareSize5(){
-        Pinpad pinpad1 = new Pinpad(5);
-        ArrayList customArray1 = new ArrayList();
-        for (int i = 0; i < pinpad1.getSquareSize() * pinpad1.getSquareSize(); i++) {
-            customArray1.add(i);
+        Pinpad pinpad = new Pinpad(5);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
         }
-        pinpad1.setCustomArray(pinpad1.getSquareSize(), customArray1);
-        Customer customer4 = new Customer();
-        customer4.setAnchorNumber(4);
-        customer4.setDirectionNumber(0);
-        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer4, pinpad1));
-        Customer customer5 = new Customer();
-        customer5.setAnchorNumber(9);
-        customer5.setDirectionNumber(5);
-        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer5, pinpad1));
-        Customer customer6 = new Customer();
-        customer6.setAnchorNumber(14);
-        customer6.setDirectionNumber(10);
-        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer6, pinpad1));
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(4);
+        customer.setDirectionNumber(0);
+        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(9);
+        customer.setDirectionNumber(5);
+        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(14);
+        customer.setDirectionNumber(10);
+        Assert.assertEquals(13, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
     @Test
