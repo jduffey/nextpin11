@@ -193,4 +193,14 @@ public class SecretNumberTest {
         Assert.assertEquals(11, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
+    @Test
+    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize3(){
+        Assert.assertTrue(false);
+    }
+
+    @Test
+    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize3(){
+        Assert.assertTrue(false);
+    }
+
 }
