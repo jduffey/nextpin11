@@ -25,7 +25,6 @@ public class SecretNumberTest {
         // From 0 to 1 is "one right"
         // so from the center (4) we move one right
         // therefore secret number is 5
-        App.displayPinpadSquare(pinpad);
         Assert.assertEquals(5, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
@@ -86,7 +85,6 @@ public class SecretNumberTest {
         // From 0 to 1 is "one down"
         // so from the center (1) we move one down
         // therefore secret number is 7
-        App.displayPinpadSquare(pinpad);
         Assert.assertEquals(7, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
@@ -117,8 +115,69 @@ public class SecretNumberTest {
         // From 0 to 1 is "one up"
         // so from the center (5) we move one up
         // therefore secret number is 2
-        App.displayPinpadSquare(pinpad);
         Assert.assertEquals(2, SecretNumber.findSecretNumber(customer, pinpad));
+    }
+
+    @Test
+    public void goOneRightToWrapAroundToBeginningOfThatRow() {
+        Customer customer = new Customer();
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(1);
+
+        // Want to produce:
+        // 1 6 0
+        // 3 5 8
+        // 2 7 4
+        Pinpad pinpad = new Pinpad(3);
+        ArrayList customArray1 = new ArrayList();
+        customArray1.add(1);
+        customArray1.add(6);
+        customArray1.add(0);
+        customArray1.add(3);
+        customArray1.add(5);
+        customArray1.add(8);
+        customArray1.add(2);
+        customArray1.add(7);
+        customArray1.add(4);
+
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
+
+        // From 0 to 1 is "go one right by wrapping around to the beginning of the same row"
+        // so from the center (5) we move one right
+        // therefore secret number is 8
+        App.displayPinpadSquare(pinpad);
+        Assert.assertEquals(8, SecretNumber.findSecretNumber(customer, pinpad));
+    }
+
+    @Test
+    public void goOneLeftToWrapAroundToEndOfThatRow() {
+        Customer customer = new Customer();
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(1);
+
+        // Want to produce:
+        // 0 6 1
+        // 3 5 8
+        // 2 7 4
+        Pinpad pinpad = new Pinpad(3);
+        ArrayList customArray1 = new ArrayList();
+        customArray1.add(0);
+        customArray1.add(6);
+        customArray1.add(1);
+        customArray1.add(3);
+        customArray1.add(5);
+        customArray1.add(8);
+        customArray1.add(2);
+        customArray1.add(7);
+        customArray1.add(4);
+
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
+
+        // From 0 to 1 is "go one left by wrapping around to the end of the same row"
+        // so from the center (5) we move one left
+        // therefore secret number is 3
+        App.displayPinpadSquare(pinpad);
+        Assert.assertEquals(3, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
 }
