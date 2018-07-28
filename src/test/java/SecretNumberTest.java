@@ -203,4 +203,14 @@ public class SecretNumberTest {
         Assert.assertTrue(false);
     }
 
+    @Test
+    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize5(){
+        Assert.assertTrue(false);
+    }
+
+    @Test
+    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize5(){
+        Assert.assertTrue(false);
+    }
+
 }
