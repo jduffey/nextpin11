@@ -128,7 +128,7 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goOneRightToWrapAroundToBeginningOfThatRowOnSquareSize5(){
+    public void goOneRightToWrapAroundToBeginningOfThatRowOnSquareSize5() {
         Pinpad pinpad = new Pinpad(5);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -194,7 +194,7 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goTwoRightMovementWithinArrayBoundsOnSquareSize5(){
+    public void goTwoRightMovementWithinArrayBoundsOnSquareSize5() {
         Pinpad pinpad = new Pinpad(5);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -216,7 +216,7 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goTwoLeftMovementWithinArrayBoundsOnSquareSize5(){
+    public void goTwoLeftMovementWithinArrayBoundsOnSquareSize5() {
         Pinpad pinpad = new Pinpad(5);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -282,7 +282,7 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize3(){
+    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize3() {
         Pinpad pinpad = new Pinpad(3);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -304,7 +304,7 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize3(){
+    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize3() {
         Pinpad pinpad = new Pinpad(3);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -324,15 +324,5 @@ public class SecretNumberTest {
         customer.setDirectionNumber(2);
         Assert.assertEquals(7, SecretNumber.findSecretNumber(customer, pinpad));
     }
-//
-//    @Test
-//    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize5(){
-//        Assert.assertTrue(false);
-//    }
-//
-//    @Test
-//    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize5(){
-//        Assert.assertTrue(false);
-//    }
 
 }

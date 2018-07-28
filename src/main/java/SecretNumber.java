@@ -18,7 +18,6 @@ public class SecretNumber {
         } else if ((0 == (posAnc + 1) % pinpad.getSquareSize() && posDir == posAnc - (pinpad.getSquareSize() - 1))) {
             movementNumber = 1;
         } else if ((posAnc % pinpad.getSquareSize() == 0 && posDir == posAnc + (pinpad.getSquareSize() - 1)))
-
         {
             movementNumber = -1;
         } else
