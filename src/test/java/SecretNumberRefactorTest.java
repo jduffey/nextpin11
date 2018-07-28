@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class SecretNumberRefactorTest {
 
     @Test
-    public void horizontalMovementShouldWorkProperly() {
+    public void horizontalMovementOnlyShouldWorkProperly() {
         Pinpad pinpad = new Pinpad(7);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
