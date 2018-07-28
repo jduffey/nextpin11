@@ -2,11 +2,12 @@ public class SecretNumberRefactor {
 
     public static int findSecretNumber(Customer customer, Pinpad pinpad) {
 
+        int sqrSiz = pinpad.getSquareSize();
         int posAnc = pinpad.getPosOfValue(customer.getAnchorNumber());
         int posDir = pinpad.getPosOfValue(customer.getDirectionNumber());
-        int positionOfMiddleOfPinpadSquare = pinpad.getArraySizeOfPinPad() / 2;
+        int posMid = pinpad.getArraySizeOfPinPad() / 2;
 
-        return positionOfMiddleOfPinpadSquare + (posDir - posAnc);
+        return (posMid / sqrSiz) * sqrSiz + (posMid + (posDir - posAnc)) % sqrSiz;
 
     }
 }
