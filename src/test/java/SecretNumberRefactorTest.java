@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class SecretNumberRefactorTest {
 
     @Test
-    public void oneSingleRowArrayShouldMoveAnyNumberToTheRight() {
+    public void horizontalMovementShouldWorkProperly() {
         Pinpad pinpad = new Pinpad(7);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
@@ -39,6 +39,30 @@ public class SecretNumberRefactorTest {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(6);
+        Assert.assertEquals(23, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(42);
+        Assert.assertEquals(25, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(43);
+        Assert.assertEquals(26, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(44);
+        Assert.assertEquals(27, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(45);
+        Assert.assertEquals(21, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(46);
+        Assert.assertEquals(22, SecretNumberRefactor.findSecretNumber(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(47);
         Assert.assertEquals(23, SecretNumberRefactor.findSecretNumber(customer, pinpad));
     }
 
