@@ -194,23 +194,111 @@ public class SecretNumberTest {
     }
 
     @Test
-    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize3(){
-        Assert.assertTrue(false);
+    public void goTwoRightMovementWithinArrayBoundsOnSquareSize5(){
+        Pinpad pinpad = new Pinpad(5);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(2);
+        Assert.assertEquals(14, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(2);
+        customer.setDirectionNumber(4);
+        Assert.assertEquals(14, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(21);
+        customer.setDirectionNumber(23);
+        Assert.assertEquals(14, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
     @Test
-    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize3(){
-        Assert.assertTrue(false);
+    public void goTwoLeftMovementWithinArrayBoundsOnSquareSize5(){
+        Pinpad pinpad = new Pinpad(5);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(9);
+        customer.setDirectionNumber(7);
+        Assert.assertEquals(10, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(17);
+        customer.setDirectionNumber(15);
+        Assert.assertEquals(10, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(23);
+        customer.setDirectionNumber(21);
+        Assert.assertEquals(10, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
     @Test
-    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize5(){
-        Assert.assertTrue(false);
+    public void goDownTwoMovementWithinArrayBoundsSquareSize5() {
+        Pinpad pinpad = new Pinpad(5);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(10);
+        Assert.assertEquals(22, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(6);
+        customer.setDirectionNumber(16);
+        Assert.assertEquals(22, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(14);
+        customer.setDirectionNumber(24);
+        Assert.assertEquals(22, SecretNumber.findSecretNumber(customer, pinpad));
     }
 
     @Test
-    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize5(){
-        Assert.assertTrue(false);
+    public void goUpTwoMovementWithinArrayBoundsSquareSize5() {
+        Pinpad pinpad = new Pinpad(5);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+
+        customer.setAnchorNumber(10);
+        customer.setDirectionNumber(0);
+        Assert.assertEquals(2, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(16);
+        customer.setDirectionNumber(6);
+        Assert.assertEquals(2, SecretNumber.findSecretNumber(customer, pinpad));
+        customer.setAnchorNumber(24);
+        customer.setDirectionNumber(14);
+        Assert.assertEquals(2, SecretNumber.findSecretNumber(customer, pinpad));
     }
+
+//    @Test
+//    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize3(){
+//        Assert.assertTrue(false);
+//    }
+//
+//    @Test
+//    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize3(){
+//        Assert.assertTrue(false);
+//    }
+//
+//    @Test
+//    public void goOneUpToWrapAroundToBottomOfThatColumnOnSquareSize5(){
+//        Assert.assertTrue(false);
+//    }
+//
+//    @Test
+//    public void goOneDownToWrapAroundToTopOfThatColumnOnSquareSize5(){
+//        Assert.assertTrue(false);
+//    }
 
 }
