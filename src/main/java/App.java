@@ -16,6 +16,6 @@ public class App {
         Displayer.displayPinpadSquare(pinpad);
 
         Displayer.displaySecretNumber(customer, pinpad);
-        
+
     }
 }
