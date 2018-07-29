@@ -55,4 +55,54 @@ public class SecretNumberRefactor2Test {
         Assert.assertEquals(-3, SecretNumberRefactor2.getHorMove(customer, pinpad));
     }
 
+    @Test
+    public void verticalMovementOnSameColumnShouldCalculateProperly() {
+        Pinpad pinpad = new Pinpad(7);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+        Displayer.displayPinpadSquare(pinpad);
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(7);
+        Assert.assertEquals(1, SecretNumberRefactor2.getVerMove(customer, pinpad));
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(14);
+        Assert.assertEquals(2, SecretNumberRefactor2.getVerMove(customer, pinpad));
+
+        customer.setAnchorNumber(42);
+        customer.setDirectionNumber(0);
+        Assert.assertEquals(-6, SecretNumberRefactor2.getVerMove(customer, pinpad));
+    }
+
+    @Test
+    public void verticalMovementWithDirNumberOnDifferentColumnShouldCalculateProperly() {
+        Pinpad pinpad = new Pinpad(7);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+        Displayer.displayPinpadSquare(pinpad);
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(8);
+        Assert.assertEquals(1, SecretNumberRefactor2.getVerMove(customer, pinpad));
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(16);
+        Assert.assertEquals(2, SecretNumberRefactor2.getVerMove(customer, pinpad));
+
+        customer.setAnchorNumber(48);
+        customer.setDirectionNumber(17);
+        Assert.assertEquals(-4, SecretNumberRefactor2.getVerMove(customer, pinpad));
+    }
+
 }
