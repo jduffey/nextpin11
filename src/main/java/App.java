@@ -2,7 +2,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Pinpad pinpad = new Pinpad(3);
+        Pinpad pinpad = new Pinpad(7);
         Customer customer = new Customer();
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
@@ -14,5 +14,8 @@ public class App {
         Displayer.displayColumnHeaderUnderscores(pinpad);
 
         Displayer.displayPinpadSquare(pinpad);
+
+        Displayer.displaySecretNumber(customer, pinpad);
+        
     }
 }
