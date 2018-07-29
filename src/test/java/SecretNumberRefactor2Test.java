@@ -24,6 +24,10 @@ public class SecretNumberRefactor2Test {
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(2);
         Assert.assertEquals(2, SecretNumberRefactor2.getHorMove(customer, pinpad));
+
+        customer.setAnchorNumber(6);
+        customer.setDirectionNumber(0);
+        Assert.assertEquals(-6, SecretNumberRefactor2.getHorMove(customer, pinpad));
     }
 
 }
