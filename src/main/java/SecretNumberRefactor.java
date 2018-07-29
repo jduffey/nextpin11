@@ -20,9 +20,7 @@ public class SecretNumberRefactor {
         int posDir = pinpad.getPosOfValue(customer.getDirectionNumber());
         int posMid = pinpad.getArraySizeOfPinPad() / 2;
 
-
         return (pinpad.getArraySizeOfPinPad() + (posMid + ((posDir - posAnc) / sqrSiz * sqrSiz)));
-
     }
 
     private static int applyHorizontalMovement(Customer customer, Pinpad pinpad) {
@@ -33,6 +31,5 @@ public class SecretNumberRefactor {
         int posMid = pinpad.getArraySizeOfPinPad() / 2;
 
         return (posMid / sqrSiz) * sqrSiz + (posMid + (posDir - posAnc)) % sqrSiz;
-
     }
 }
