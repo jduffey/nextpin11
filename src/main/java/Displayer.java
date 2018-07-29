@@ -33,4 +33,9 @@ public class Displayer {
         System.out.println("*** Pinpad App ***");
         System.out.println("Square Size: " + pinpad.getSquareSize());
     }
+
+    public static void displaySecretNumber(Customer customer, Pinpad pinpad) {
+
+        System.out.println(SecretNumberRefactor.findSecretNumber(customer, pinpad));
+    }
 }
