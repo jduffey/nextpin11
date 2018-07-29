@@ -5,9 +5,12 @@ public class SecretNumberRefactor {
         int elementOfTheColumnAdjustmentFromTheMiddleNumber = applyHorizontalMovement(customer, pinpad) % pinpad.getArraySizeOfPinPad();
         int elementOfTheRowAdjustmentFromTheMiddleNumber = applyVerticalMovement(customer, pinpad) % pinpad.getArraySizeOfPinPad();
 
-        return elementOfTheRowAdjustmentFromTheMiddleNumber;
+        int rowSec = elementOfTheRowAdjustmentFromTheMiddleNumber / pinpad.getSquareSize();
+        int colSec = elementOfTheColumnAdjustmentFromTheMiddleNumber % pinpad.getSquareSize();
 
+        int posSec = rowSec * pinpad.getSquareSize() + colSec;
 
+        return pinpad.get(posSec);
     }
 
     private static int applyVerticalMovement(Customer customer, Pinpad pinpad) {

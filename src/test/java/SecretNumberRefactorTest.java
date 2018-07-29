@@ -67,7 +67,7 @@ public class SecretNumberRefactorTest {
     }
 
     @Test
-    public void verticalMovementOnlyShouldWorkProperly(){
+    public void verticalMovementOnlyShouldWorkProperly() {
         Pinpad pinpad = new Pinpad(7);
         Customer customer = new Customer();
         ArrayList customArray = new ArrayList();
