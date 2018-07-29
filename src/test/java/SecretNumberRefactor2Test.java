@@ -15,7 +15,6 @@ public class SecretNumberRefactor2Test {
             customArray.add(i);
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
-        Displayer.displayPinpadSquare(pinpad);
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
@@ -40,7 +39,6 @@ public class SecretNumberRefactor2Test {
             customArray.add(i);
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
-        Displayer.displayPinpadSquare(pinpad);
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(8);
@@ -65,7 +63,6 @@ public class SecretNumberRefactor2Test {
             customArray.add(i);
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
-        Displayer.displayPinpadSquare(pinpad);
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(7);
@@ -90,7 +87,6 @@ public class SecretNumberRefactor2Test {
             customArray.add(i);
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
-        Displayer.displayPinpadSquare(pinpad);
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(8);
