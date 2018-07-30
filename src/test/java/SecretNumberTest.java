@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class SecretNumberRefactor2Test {
+public class SecretNumberTest {
 
     // Does not yet work for shuffled pinpads, only straight ones
 
@@ -20,15 +20,15 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(1, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(1, SecretNumber.getHorMove(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(2);
-        Assert.assertEquals(2, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(2, SecretNumber.getHorMove(customer, pinpad));
 
         customer.setAnchorNumber(6);
         customer.setDirectionNumber(0);
-        Assert.assertEquals(-6, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(-6, SecretNumber.getHorMove(customer, pinpad));
     }
 
     @Test
@@ -44,15 +44,15 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(8);
-        Assert.assertEquals(1, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(1, SecretNumber.getHorMove(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(9);
-        Assert.assertEquals(2, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(2, SecretNumber.getHorMove(customer, pinpad));
 
         customer.setAnchorNumber(48);
         customer.setDirectionNumber(17);
-        Assert.assertEquals(-3, SecretNumberRefactor2.getHorMove(customer, pinpad));
+        Assert.assertEquals(-3, SecretNumber.getHorMove(customer, pinpad));
     }
 
     @Test
@@ -68,15 +68,15 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(7);
-        Assert.assertEquals(1, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(1, SecretNumber.getVerMove(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(14);
-        Assert.assertEquals(2, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(2, SecretNumber.getVerMove(customer, pinpad));
 
         customer.setAnchorNumber(42);
         customer.setDirectionNumber(0);
-        Assert.assertEquals(-6, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(-6, SecretNumber.getVerMove(customer, pinpad));
     }
 
     @Test
@@ -92,15 +92,15 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(8);
-        Assert.assertEquals(1, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(1, SecretNumber.getVerMove(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(16);
-        Assert.assertEquals(2, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(2, SecretNumber.getVerMove(customer, pinpad));
 
         customer.setAnchorNumber(48);
         customer.setDirectionNumber(17);
-        Assert.assertEquals(-4, SecretNumberRefactor2.getVerMove(customer, pinpad));
+        Assert.assertEquals(-4, SecretNumber.getVerMove(customer, pinpad));
     }
 
     @Test
@@ -117,27 +117,27 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(25, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(25, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(2);
-        Assert.assertEquals(26, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(26, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(4);
-        Assert.assertEquals(21, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(21, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(6);
         customer.setDirectionNumber(2);
-        Assert.assertEquals(27, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(27, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(27);
         customer.setDirectionNumber(21);
-        Assert.assertEquals(25, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(25, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(43);
         customer.setDirectionNumber(47);
-        Assert.assertEquals(21, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(21, SecretNumber.getSecNum(customer, pinpad));
     }
 
     @Test
@@ -154,23 +154,23 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(7);
-        Assert.assertEquals(31, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(31, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(14);
-        Assert.assertEquals(38, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(38, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(28);
-        Assert.assertEquals(3, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(3, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(48);
         customer.setDirectionNumber(6);
-        Assert.assertEquals(31, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(31, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(39);
         customer.setDirectionNumber(11);
-        Assert.assertEquals(45, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(45, SecretNumber.getSecNum(customer, pinpad));
     }
 
     @Test
@@ -187,27 +187,27 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(8);
-        Assert.assertEquals(32, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(32, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(48);
-        Assert.assertEquals(16, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(16, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(40);
         customer.setDirectionNumber(6);
-        Assert.assertEquals(39, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(39, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(36);
         customer.setDirectionNumber(12);
-        Assert.assertEquals(42, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(42, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(29);
         customer.setDirectionNumber(13);
-        Assert.assertEquals(1, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(1, SecretNumber.getSecNum(customer, pinpad));
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(25, SecretNumberRefactor2.getSecNum(customer, pinpad));
+        Assert.assertEquals(25, SecretNumber.getSecNum(customer, pinpad));
     }
 
     @Test
@@ -226,7 +226,7 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(32, SecretNumberRefactor2.getSecNum(customer,pinpad));
+        Assert.assertEquals(32, SecretNumber.getSecNum(customer,pinpad));
     }
 
     @Test
@@ -245,7 +245,7 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(34, SecretNumberRefactor2.getSecNum(customer,pinpad));
+        Assert.assertEquals(34, SecretNumber.getSecNum(customer,pinpad));
     }
 
     @Test
@@ -264,7 +264,7 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(3, SecretNumberRefactor2.getSecNum(customer,pinpad));
+        Assert.assertEquals(3, SecretNumber.getSecNum(customer,pinpad));
     }
 
     @Test
@@ -283,7 +283,7 @@ public class SecretNumberRefactor2Test {
 
         customer.setAnchorNumber(0);
         customer.setDirectionNumber(1);
-        Assert.assertEquals(41, SecretNumberRefactor2.getSecNum(customer,pinpad));
+        Assert.assertEquals(41, SecretNumber.getSecNum(customer,pinpad));
     }
 
 }

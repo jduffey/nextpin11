@@ -1,4 +1,4 @@
-public class SecretNumberRefactor2 {
+public class SecretNumber {
 
     public static int getHorMove(Customer customer, Pinpad pinpad) {
 
