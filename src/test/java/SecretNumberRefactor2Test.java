@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class SecretNumberRefactor2Test {
 
+    // Does not yet work for shuffled pinpads, only straight ones
+
     @Test
     public void horizontalMovementOnSameRowShouldCalculateProperly() {
         Pinpad pinpad = new Pinpad(7);
