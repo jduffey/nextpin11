@@ -23,7 +23,7 @@ public class SecretNumberRefactor2 {
         int rowMid = pinpad.getSquareSize() / 2;
         int colMid = pinpad.getSquareSize() / 2;
 
-        int rowSec = (rowMid + rowMov) % pinpad.getSquareSize();
+        int rowSec = (pinpad.getSquareSize() + rowMid + rowMov) % pinpad.getSquareSize();
         int colSec = (pinpad.getSquareSize() + colMid + colMov) % pinpad.getSquareSize();
 
         int secNum = pinpad.get(rowSec * pinpad.getSquareSize() + colSec);
