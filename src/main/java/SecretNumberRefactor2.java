@@ -20,8 +20,8 @@ public class SecretNumberRefactor2 {
         int rowSec = (pinpad.getSquareSize() + rowMid + rowMov) % pinpad.getSquareSize();
         int colSec = (pinpad.getSquareSize() + colMid + colMov) % pinpad.getSquareSize();
 
-        int secNum = pinpad.get(rowSec * pinpad.getSquareSize() + colSec);
+        int secNumPos = pinpad.get(rowSec * pinpad.getSquareSize() + colSec);
 
-        return secNum;
+        return pinpad.get(secNumPos);
     }
 }
