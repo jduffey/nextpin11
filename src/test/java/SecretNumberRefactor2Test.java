@@ -128,6 +128,14 @@ public class SecretNumberRefactor2Test {
         customer.setAnchorNumber(6);
         customer.setDirectionNumber(2);
         Assert.assertEquals(27, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(27);
+        customer.setDirectionNumber(21);
+        Assert.assertEquals(25, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(43);
+        customer.setDirectionNumber(47);
+        Assert.assertEquals(21, SecretNumberRefactor2.getSecNum(customer, pinpad));
     }
 
 }
