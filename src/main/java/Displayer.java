@@ -36,6 +36,6 @@ public class Displayer {
 
     public static void displaySecretNumber(Customer customer, Pinpad pinpad) {
 
-        System.out.println(SecretNumberRefactor.findSecretNumber(customer, pinpad));
+        System.out.println(SecretNumberRefactor2.getSecNum(customer, pinpad));
     }
 }
