@@ -171,4 +171,40 @@ public class SecretNumberRefactor2Test {
         Assert.assertEquals(45, SecretNumberRefactor2.getSecNum(customer, pinpad));
     }
 
+    @Test
+    public void secretNumberCanBeFoundWithVerticalAndHorizontalMovement() {
+        Pinpad pinpad = new Pinpad(7);
+        Customer customer = new Customer();
+        ArrayList customArray = new ArrayList();
+
+        for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
+            customArray.add(i);
+        }
+        pinpad.setCustomArray(pinpad.getSquareSize(), customArray);
+        Displayer.displayPinpadSquare(pinpad);
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(8);
+        Assert.assertEquals(32, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(48);
+        Assert.assertEquals(16, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(40);
+        customer.setDirectionNumber(6);
+        Assert.assertEquals(39, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(36);
+        customer.setDirectionNumber(12);
+        Assert.assertEquals(42, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(29);
+        customer.setDirectionNumber(13);
+        Assert.assertEquals(1, SecretNumberRefactor2.getSecNum(customer, pinpad));
+
+        customer.setAnchorNumber(0);
+        customer.setDirectionNumber(1);
+        Assert.assertEquals(25, SecretNumberRefactor2.getSecNum(customer, pinpad));
+    }
 }
