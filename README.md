@@ -27,5 +27,7 @@ In other words: secretNumber = algorithm(pinpad, customer); where only customer 
 Other security enhancements could involved adding number of additional or alternate rule sets for how to "interact with" the pinpad. For example:
 
 -Assess the value in the first element of the pinpad and move right that many times. Assess the value you land on then move down that many times. From that number, navigate a la Anchor->Direction to find the secret number.
+
 -If the first element is odd, the apply the opposite navigation rules ("move left" becomes "move right") from the middle number.
--...and so on.
+
+-...and so on. Get creative!
