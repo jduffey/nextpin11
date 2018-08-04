@@ -1,6 +1,6 @@
 Revised 8/4/2018.
 
-This is a hobby project where the idea is to create an solution for a type of 2FA method.
+This is a hobby project with the goal of creating a type of 2FA solution.
 
 A square-shaped pinpad of an arbitray odd-sized number N is generated and populated with the values of 0 to N. The order of the numbers is then randomly shuffled. 
 
@@ -20,4 +20,4 @@ In the following pad,
 
 `6 1 8`
 
-we see that from Anchor (0) to Direction (1) can be expressed as "one to the right, then one down". (Note this is equivalent to "one down, then one to the right" or "left two, then up two"). By applying the same navigation but starting at the middle number, we find the the secret number is 8.
+we see that from Anchor (0) to Direction (1) can be expressed as "one to the right, then one down". (Note this is equivalent to "one down, then one to the right" or "left two, then up two"). By applying the same navigation but starting at the middle number, we find that the secret number is 8.
