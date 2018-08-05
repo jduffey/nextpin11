@@ -1,5 +1,3 @@
-Revised 8/5/2018.
-
 This is a hobby project with the goal of creating a type of 2FA solution.
 
 A square-shaped pinpad of an arbitray odd-sized number N is generated and populated with the values of 0 to N. The order of the numbers is then randomly shuffled. 
