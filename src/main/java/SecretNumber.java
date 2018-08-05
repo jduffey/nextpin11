@@ -11,15 +11,15 @@ public class SecretNumber {
 
     public static int getSecNum(Customer customer, Pinpad pinpad) {
 
-        int rowMov = getVerMove(customer, pinpad);
-        int colMov = getHorMove(customer, pinpad);
+        int interRowMov = getVerMove(customer, pinpad);
+        int interColMov = getHorMove(customer, pinpad);
 
-        int rowMid = pinpad.getSquareSize() / 2;
-        int colMid = pinpad.getSquareSize() / 2;
+        int rowOfMiddleNumber = pinpad.getSquareSize() / 2;
+        int colOfMiddleNumber = pinpad.getSquareSize() / 2;
 
-        int rowSec = (pinpad.getSquareSize() + rowMid + rowMov) % pinpad.getSquareSize();
-        int colSec = (pinpad.getSquareSize() + colMid + colMov) % pinpad.getSquareSize();
+        int rowOfSecretNumber = (pinpad.getSquareSize() + rowOfMiddleNumber + interRowMov) % pinpad.getSquareSize();
+        int colOfSecretNumber = (pinpad.getSquareSize() + colOfMiddleNumber + interColMov) % pinpad.getSquareSize();
 
-        return pinpad.get(rowSec * pinpad.getSquareSize() + colSec);
+        return pinpad.get(rowOfSecretNumber * pinpad.getSquareSize() + colOfSecretNumber);
     }
 }
