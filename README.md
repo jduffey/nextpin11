@@ -1,4 +1,4 @@
-Revised 8/4/2018.
+Revised 8/5/2018.
 
 This is a hobby project with the goal of creating a type of 2FA solution.
 
@@ -22,7 +22,11 @@ In the following pad,
 
 we see that from Anchor (0) to Direction (1) can be expressed as "one to the right, then one down". (Note this is equivalent to "one down, then one to the right" or "left two, then up two"). By applying the same navigation but starting at the middle number, we find that the secret number is 8.
 
-In other words: secretNumber = algorithm(pinpad, customer); where only customer knows her private numbers and the pinpad is shuffled every time it is presented to her so that onlookers cannot easily deduce how the secret number is derived. Security can be enhanced by increasing the pad size and/or requiring the customer to correctly pick the secret number on several shuffled pinpads consecutively.
+In other words,
+
+**secretNumber = algorithm(pinpad, customer)**
+
+where only customer knows her private numbers and the pinpad is shuffled every time it is presented to her so that onlookers cannot easily deduce how the secret number is derived. Security can be enhanced by increasing the pad size and/or requiring the customer to correctly pick the secret number on several shuffled pinpads consecutively.
 
 Other security enhancements could involve adding any number of additional or alternate rule sets for how to "interact with" the pinpad. For example:
 
