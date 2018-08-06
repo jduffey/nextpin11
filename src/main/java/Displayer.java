@@ -36,6 +36,12 @@ public class Displayer {
 
     public static void displaySecretNumber(Customer customer, Pinpad pinpad) {
 
-        System.out.println(SecretNumber.getSecNum(customer, pinpad));
+        System.out.println("Actual secret number: " + SecretNumber.getSecNum(customer, pinpad));
+    }
+
+    public static void displaySuccessOrFailMessage(Customer customer, Pinpad pinpad, int guessedSecretNumber) {
+
+        String message = (guessedSecretNumber == SecretNumber.getSecNum(customer, pinpad)) ? "Success!" : "Utter failure.";
+        System.out.println(message);
     }
 }
