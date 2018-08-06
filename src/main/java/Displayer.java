@@ -29,8 +29,9 @@ public class Displayer {
         System.out.println();
     }
 
-    public static void displayIntroMessage(Pinpad pinpad) {
+    public static void displayIntroMessage(Pinpad pinpad, Customer customer) {
         System.out.println("*** Pinpad App ***");
+        System.out.println("Welcome " + customer.getName());
         System.out.println("Square Size: " + pinpad.getSquareSize());
     }
 

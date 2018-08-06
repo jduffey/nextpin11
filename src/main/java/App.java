@@ -4,12 +4,20 @@ public class App {
 
     public static void main(String[] args) {
 
-        Pinpad pinpad = new Pinpad(7);
         Customer customer = new Customer();
+        setCustomerSettings(customer);
 
-        Displayer.displayIntroMessage(pinpad);
+        do {
+            runAGuessingSession(customer);
+        } while (true);
 
-        askForAndSetPrivateNumbers(customer);
+    }
+
+    private static void runAGuessingSession(Customer customer) {
+
+        Pinpad pinpad = new Pinpad(customer.getPreferredPinpadSize());
+
+        Displayer.displayIntroMessage(pinpad, customer);
 
         Displayer.displayAnchorAndDirectionNumber(customer);
 
@@ -22,20 +30,17 @@ public class App {
         Displayer.displaySecretNumber(customer, pinpad);
 
         Displayer.displaySuccessOrFailMessage(customer, pinpad, guessedSecretNumber);
-
     }
 
-    private static int askToGuessSecretNumber() {
+    private static void setCustomerSettings(Customer customer) {
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Guess secret number: ");
-        int secNum = scanner.nextInt();
+        System.out.println("Please enter your name: ");
+        customer.setName(scanner.next());
 
-        return secNum;
-    }
-
-    private static void askForAndSetPrivateNumbers(Customer customer) {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter preferred pinpad size: ");
+        customer.setPreferredPinpadSize(scanner.nextInt());
 
         System.out.println("Set anchor number: ");
         int ancNum = scanner.nextInt();
@@ -46,5 +51,14 @@ public class App {
         customer.setDirectionNumber(dirNum);
 
         System.out.println("Thank you for following the instructions.");
+    }
+
+    private static int askToGuessSecretNumber() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Guess secret number: ");
+        int secNum = scanner.nextInt();
+
+        return secNum;
     }
 }
