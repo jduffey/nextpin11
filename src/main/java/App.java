@@ -4,31 +4,17 @@ public class App {
 
     public static void main(String[] args) {
 
-        Customer customer = new Customer();
-        setCustomerSettings(customer);
+        Customer customer = establishCustomer();
 
-        Displayer.displayIntroMessage(customer);
+        LoginSessionAttempt session = new LoginSessionAttempt(customer);
 
-        for (int i = 0; i < 4; i++) {
-            Displayer.displayColumnHeaderUnderscores(customer);
-            runAGuessingSession(customer);
-        }
-
+        session.initiateLoginAttempt();
     }
 
-    private static void runAGuessingSession(Customer customer) {
-
-        Pinpad pinpad = new Pinpad(customer.getPreferredPinpadSize());
-
-        Displayer.displayPinpadSquare(pinpad);
-
-        int guessedSecretNumber = askToGuessSecretNumber();
-
-        Displayer.displaySecretNumber(customer, pinpad);
-
-        Displayer.displaySuccessOrFailMessage(customer, pinpad, guessedSecretNumber);
-
-        System.out.println();
+    private static Customer establishCustomer() {
+        Customer customer = new Customer();
+        setCustomerSettings(customer);
+        return customer;
     }
 
     private static void setCustomerSettings(Customer customer) {
@@ -53,12 +39,4 @@ public class App {
         System.out.println("Thank you for following the instructions.");
     }
 
-    private static int askToGuessSecretNumber() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Guess secret number: ");
-
-        return scanner.nextInt();
-    }
 }
