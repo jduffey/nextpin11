@@ -22,17 +22,17 @@ public class Displayer {
         System.out.println("Direction: " + customer.getDirectionNumber());
     }
 
-    public static void displayColumnHeaderUnderscores(Pinpad pinpad) {
-        for (int i = 0; i < pinpad.getSquareSize(); i++) {
+    public static void displayColumnHeaderUnderscores(Customer customer) {
+        for (int i = 0; i < customer.getPreferredPinpadSize(); i++) {
             System.out.print("___ ");
         }
         System.out.println();
     }
 
-    public static void displayIntroMessage(Pinpad pinpad, Customer customer) {
+    public static void displayIntroMessage(Customer customer) {
         System.out.println("*** Pinpad App ***");
         System.out.println("Welcome " + customer.getName());
-        System.out.println("Square Size: " + pinpad.getSquareSize());
+        System.out.println("Square Size: " + customer.getPreferredPinpadSize());
     }
 
     public static void displaySecretNumber(Customer customer, Pinpad pinpad) {
