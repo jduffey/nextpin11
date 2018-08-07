@@ -18,7 +18,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void shouldSetAndGetPrefferedPinpadSize() {
+    public void shouldSetAndGetPreferredPinpadSize() {
         Customer customer = new Customer();
         customer.setPreferredPinpadSize(7);
         Assert.assertEquals(7, customer.getPreferredPinpadSize());
