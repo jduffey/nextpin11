@@ -17,4 +17,11 @@ public class CustomerTest {
         Assert.assertEquals(5, customer.getDirectionNumber());
     }
 
+    @Test
+    public void shouldSetAndGetPrefferedPinpadSize() {
+        Customer customer = new Customer();
+        customer.setPreferredPinpadSize(7);
+        Assert.assertEquals(7, customer.getPreferredPinpadSize());
+    }
+
 }
