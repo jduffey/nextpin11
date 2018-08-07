@@ -9,6 +9,8 @@ public class App {
         LoginSessionAttempt session = new LoginSessionAttempt(customer);
 
         session.initiateLoginAttempt();
+
+        session.displayResults();
     }
 
 }
