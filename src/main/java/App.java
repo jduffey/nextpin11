@@ -5,17 +5,14 @@ public class App {
     public static void main(String[] args) {
 
         Customer customer = new Customer();
-
         setCustomerSettings(customer);
 
         Displayer.displayIntroMessage(customer);
-        Displayer.displayAnchorAndDirectionNumber(customer);
-        Displayer.displayColumnHeaderUnderscores(customer);
 
         for (int i = 0; i < 4; i++) {
+            Displayer.displayColumnHeaderUnderscores(customer);
             runAGuessingSession(customer);
         }
-        ;
 
     }
 

@@ -1,6 +1,7 @@
 public class Displayer {
 
     public static void displayPinpadSquare(Pinpad pinpad) {
+
         for (int index = 0; index < pinpad.getArraySizeOfPinPad(); index++) {
 
             if (pinpad.get(index) < 10) {
@@ -33,6 +34,7 @@ public class Displayer {
         System.out.println("*** Pinpad App ***");
         System.out.println("Welcome " + customer.getName());
         System.out.println("Square Size: " + customer.getPreferredPinpadSize());
+        displayAnchorAndDirectionNumber(customer);
     }
 
     public static void displaySecretNumber(Customer customer, Pinpad pinpad) {
