@@ -6,7 +6,7 @@ public class App {
 
         customer.askCustomerForSettings();
 
-        loginAttemptSession session = new loginAttemptSession(customer);
+        LoginAttemptSession session = new LoginAttemptSession(customer);
 
         session.initiateLoginAttempt();
 
