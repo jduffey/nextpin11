@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LoginSessionAttempt {
+public class LoginAttemptSession {
 
     private static final int REQUIRED_ATTEMPTS = 4;
     Customer customer;
     private List<Integer> guessedNumbers = new ArrayList<>();
     private List<Integer> actualSecretNumbers = new ArrayList<>();
 
-    public LoginSessionAttempt(Customer customer) {
+    public LoginAttemptSession(Customer customer) {
 
         this.customer = customer;
 
