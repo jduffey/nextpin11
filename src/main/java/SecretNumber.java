@@ -11,6 +11,11 @@ public class SecretNumber {
 
     public static int getSecNum(Customer customer, Pinpad pinpad) {
 
+        return identicalNavigationMethod(customer, pinpad);
+    }
+
+    private static int identicalNavigationMethod(Customer customer, Pinpad pinpad) {
+        
         int interRowMov = getVerMove(customer, pinpad);
         int interColMov = getHorMove(customer, pinpad);
 
