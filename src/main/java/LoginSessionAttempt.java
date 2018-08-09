@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class LoginSessionAttempt {
 
+    private static final int REQUIRED_ATTEMPTS = 4;
     Customer customer;
     private List<Integer> guessedNumbers = new ArrayList<>();
     private List<Integer> actualSecretNumbers = new ArrayList<>();
@@ -18,20 +19,20 @@ public class LoginSessionAttempt {
 
         Displayer.displayIntroMessage(customer);
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < REQUIRED_ATTEMPTS; i++) {
             Displayer.displayColumnHeaderUnderscores(customer);
-            runAGuessingSessionOnAnIndividualPinpad(customer);
+            runAGuessingSessionOnAnIndividualPinpad(customer, i);
         }
     }
 
-    private void runAGuessingSessionOnAnIndividualPinpad(Customer customer) {
+    private void runAGuessingSessionOnAnIndividualPinpad(Customer customer, int i) {
 
         Pinpad pinpad = new Pinpad(customer.getPreferredPinpadSize());
         actualSecretNumbers.add(SecretNumber.getSecNum(customer, pinpad));
 
         Displayer.displayPinpadSquare(pinpad);
 
-        int guessedSecretNumber = askToGuessSecretNumber();
+        int guessedSecretNumber = askToGuessSecretNumber(i);
         guessedNumbers.add(guessedSecretNumber);
 
         Displayer.displaySecretNumber(customer, pinpad);
@@ -41,11 +42,11 @@ public class LoginSessionAttempt {
         System.out.println();
     }
 
-    private static int askToGuessSecretNumber() {
+    private static int askToGuessSecretNumber(int attemptCounter) {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Guess secret number: ");
+        System.out.println("(" + (attemptCounter + 1) + "/" + REQUIRED_ATTEMPTS + ") Guess secret number: ");
 
         return scanner.nextInt();
     }
@@ -66,4 +67,5 @@ public class LoginSessionAttempt {
         System.out.println();
         System.out.println(resultMessage);
     }
+
 }
