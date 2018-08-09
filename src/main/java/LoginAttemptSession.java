@@ -19,20 +19,20 @@ public class LoginAttemptSession {
 
         Displayer.displayIntroMessage(customer);
 
-        for (int i = 0; i < REQUIRED_ATTEMPTS; i++) {
+        for (int attemptCounter = 0; attemptCounter < REQUIRED_ATTEMPTS; attemptCounter++) {
             Displayer.displayColumnHeaderUnderscores(customer);
-            runAGuessingSessionOnAnIndividualPinpad(customer, i);
+            runAGuessingAttemptOnAnIndividualPinpad(customer, attemptCounter);
         }
     }
 
-    private void runAGuessingSessionOnAnIndividualPinpad(Customer customer, int i) {
+    private void runAGuessingAttemptOnAnIndividualPinpad(Customer customer, int attemptCounter) {
 
         Pinpad pinpad = new Pinpad(customer.getPreferredPinpadSize());
         actualSecretNumbers.add(SecretNumber.getSecNum(customer, pinpad));
 
         Displayer.displayPinpadSquare(pinpad);
 
-        int guessedSecretNumber = askToGuessSecretNumber(i);
+        int guessedSecretNumber = askToGuessSecretNumber(attemptCounter);
         guessedNumbers.add(guessedSecretNumber);
 
         Displayer.displaySecretNumber(customer, pinpad);
