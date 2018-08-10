@@ -6,6 +6,7 @@ public class Customer {
     private int directionNumber;
     private String name;
     private int preferredPinpadSize;
+    private SecretNumberDecisionCriteria preferredSecretNumberDecisionCriteria;
 
     public void setAnchorNumber(int anchorNumber) {
         this.anchorNumber = anchorNumber;
@@ -59,5 +60,13 @@ public class Customer {
         setDirectionNumber(scanner.nextInt());
 
         System.out.println("Thank you for following the instructions.");
+    }
+
+    public void setPreferredSecretNumberDecisionCriteria(SecretNumberDecisionCriteria preferredSecretNumberDecisionCriteria) {
+    this.preferredSecretNumberDecisionCriteria = preferredSecretNumberDecisionCriteria;
+    }
+
+    public SecretNumberDecisionCriteria getPreferredSecretNumberDecisionCriteria() {
+        return preferredSecretNumberDecisionCriteria;
     }
 }

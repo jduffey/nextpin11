@@ -24,4 +24,11 @@ public class CustomerTest {
         Assert.assertEquals(7, customer.getPreferredPinpadSize());
     }
 
+    @Test
+    public void shouldSetAndGetPreferredSecretNumberDecisionCriteria(){
+        Customer customer = new Customer();
+        customer.setPreferredSecretNumberDecisionCriteria(SecretNumberDecisionCriteria.NAVIGATION);
+        Assert.assertEquals(SecretNumberDecisionCriteria.NAVIGATION, customer.getPreferredSecretNumberDecisionCriteria());
+    }
+
 }
