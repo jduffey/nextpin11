@@ -11,10 +11,10 @@ public class SecretNumber {
 
     public static int getSecNum(Customer customer, Pinpad pinpad) {
 
-        return identicalNavigationMethod(customer, pinpad);
+        return identicalNavigationMethodFromMiddleNumberGivenAnchorAndDirectionNumbers(customer, pinpad);
     }
 
-    private static int identicalNavigationMethod(Customer customer, Pinpad pinpad) {
+    private static int identicalNavigationMethodFromMiddleNumberGivenAnchorAndDirectionNumbers(Customer customer, Pinpad pinpad) {
 
         int interRowMov = getVerMove(customer, pinpad);
         int interColMov = getHorMove(customer, pinpad);
@@ -22,8 +22,11 @@ public class SecretNumber {
         int rowOfMiddleNumber = pinpad.getSquareSize() / 2;
         int colOfMiddleNumber = pinpad.getSquareSize() / 2;
 
-        int rowOfSecretNumber = (pinpad.getSquareSize() + rowOfMiddleNumber + interRowMov) % pinpad.getSquareSize();
-        int colOfSecretNumber = (pinpad.getSquareSize() + colOfMiddleNumber + interColMov) % pinpad.getSquareSize();
+        int rowOfDepartureNumber = rowOfMiddleNumber;
+        int colOfDepartureNumber = colOfMiddleNumber;
+
+        int rowOfSecretNumber = (pinpad.getSquareSize() + rowOfDepartureNumber + interRowMov) % pinpad.getSquareSize();
+        int colOfSecretNumber = (pinpad.getSquareSize() + colOfDepartureNumber + interColMov) % pinpad.getSquareSize();
 
         return pinpad.get(rowOfSecretNumber * pinpad.getSquareSize() + colOfSecretNumber);
     }
