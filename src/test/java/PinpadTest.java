@@ -64,7 +64,7 @@ public class PinpadTest {
     }
 
     @Test
-    public void pinpadHasMethodToReturnArrayPositionOfGivenValue(){
+    public void pinpadHasMethodToReturnArrayPositionOfGivenValue() {
         Pinpad pinpad = new Pinpad(3);
         ArrayList customArray1 = new ArrayList();
         for (int i = 0; i < pinpad.getSquareSize() * pinpad.getSquareSize(); i++) {
@@ -72,7 +72,7 @@ public class PinpadTest {
         }
         pinpad.setCustomArray(pinpad.getSquareSize(), customArray1);
 
-        Assert.assertEquals(0,pinpad.getPosOfValue(0));
+        Assert.assertEquals(0, pinpad.getPosOfValue(0));
     }
 
     @Test
